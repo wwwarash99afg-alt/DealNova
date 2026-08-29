@@ -4,10 +4,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>آنلاین‌شاپ | فروشگاه اینترنتی</title>
 
@@ -56,6 +53,8 @@
 
 <main>
 
+  <!-- HERO -->
+
   <section class="hero">
 
     <div class="hero-content">
@@ -92,6 +91,8 @@
 
   </section>
 
+
+  <!-- CATEGORIES -->
 
   <section class="category-section">
 
@@ -161,6 +162,8 @@
   </section>
 
 
+  <!-- PRODUCTS -->
+
   <section class="deals-section">
 
     <div class="section-header">
@@ -212,6 +215,7 @@
           <button
             class="favorite"
             onclick="favorite(this)"
+            aria-label="ذخیره محصول"
           >
             ♡
           </button>
@@ -286,7 +290,7 @@
 
           <img
             src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=85"
-            alt="لپ تاپ"
+            alt="لپ تاپ پرو"
           >
 
           <span class="deal-badge">
@@ -296,6 +300,7 @@
           <button
             class="favorite"
             onclick="favorite(this)"
+            aria-label="ذخیره محصول"
           >
             ♡
           </button>
@@ -380,6 +385,7 @@
           <button
             class="favorite"
             onclick="favorite(this)"
+            aria-label="ذخیره محصول"
           >
             ♡
           </button>
@@ -464,6 +470,7 @@
           <button
             class="favorite"
             onclick="favorite(this)"
+            aria-label="ذخیره محصول"
           >
             ♡
           </button>
@@ -528,6 +535,8 @@
     </section>
 
 
+    <!-- NO RESULTS -->
+
     <div
       id="noResults"
       class="no-results"
@@ -556,6 +565,8 @@
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
 
   <div class="footer-content">
@@ -577,7 +588,7 @@
 </footer>
 
 
-<!-- CART -->
+<!-- CART OVERLAY -->
 
 <div
   id="cartOverlay"
@@ -585,6 +596,8 @@
   onclick="closeCart()"
 ></div>
 
+
+<!-- CART PANEL -->
 
 <aside
   id="cartPanel"
@@ -627,11 +640,14 @@
 
     </div>
 
+
+    <!-- این دکمه به صفحه ثبت سفارش می‌رود -->
+
     <button
       class="checkout"
       onclick="checkout()"
     >
-      ادامه خرید
+      ادامه ثبت سفارش 🧾
     </button>
 
   </div>
@@ -642,7 +658,7 @@
 <script>
 
 /* =========================
-   CART STORAGE
+   CART
 ========================= */
 
 let cart = JSON.parse(
@@ -864,8 +880,6 @@ function addToCart(name, price, image) {
 ========================= */
 
 function updateCart() {
-
-  saveCart();
 
   const cartCount =
     cart.reduce(
@@ -1095,10 +1109,12 @@ function checkout() {
     return;
   }
 
-  alert(
-    "✅ سفارش شما آماده ثبت است.\n\n" +
-    "سیستم پرداخت در مرحله بعد اضافه می‌شود."
-  );
+  /*
+    انتقال مستقیم به صفحه ثبت سفارش
+  */
+
+  window.location.href =
+    "checkout.html";
 }
 
 
@@ -1110,7 +1126,7 @@ function account() {
 
   alert(
     "👤 حساب کاربری\n\n" +
-    "سیستم حساب کاربری در مرحله بعد اضافه می‌شود."
+    "صفحه حساب کاربری به‌زودی اضافه می‌شود."
   );
 }
 
@@ -1145,4 +1161,4 @@ updateCart();
 
 </body>
 
-            </html>
+              </html>
