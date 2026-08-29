@@ -472,7 +472,633 @@ footer small{
   }
 
   .products{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);</head>
+
+<body>
+
+<header>
+  <div class="header">
+    <a href="#" class="logo">🛍️ <span>آنلاین</span>‌شاپ</a>
+
+    <button class="header-button" onclick="showAffiliateInfo()">
+      💰 همکاری در فروش
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="badge">🔥 خرید هوشمند</div>
+
+    <h1>بهترین محصولات را پیدا کن</h1>
+
+    <p>
+      محصولات را پیدا کن، قیمت‌ها را مقایسه کن
+      و برای خرید به فروشگاه اصلی برو.
+    </p>
+
+    <div class="search">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="نام محصول را جستجو کنید..."
+        autocomplete="off"
+      >
+
+      <button onclick="searchProducts()">🔎 جستجو</button>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+
+  <div class="section-header">
+    <div>
+      <h2>🛍️ دسته‌بندی محصولات</h2>
+      <p class="section-subtitle">
+        دسته موردنظر خود را انتخاب کنید
+      </p>
+    </div>
+  </div>
+
+
+  <div class="categories">
+
+    <button class="category active"
+      onclick="filterCategory('all',this)">
+      🛍️ همه
+    </button>
+
+    <button class="category"
+      onclick="filterCategory('electronics',this)">
+      📱 موبایل و دیجیتال
+    </button>
+
+    <button class="category"
+      onclick="filterCategory('computers',this)">
+      💻 کامپیوتر
+    </button>
+
+    <button class="category"
+      onclick="filterCategory('audio',this)">
+      🎧 لوازم صوتی
+    </button>
+
+    <button class="category"
+      onclick="filterCategory('fashion',this)">
+      👟 پوشاک و کفش
+    </button>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-header">
+    <div>
+      <h2>🔥 محصولات ویژه</h2>
+      <p class="section-subtitle">
+        محصولات منتخب فروشگاه‌های مختلف
+      </p>
+    </div>
+
+    <span id="resultCount">4 محصول</span>
+  </div>
+
+
+  <section class="products" id="products">
+
+
+    <!-- محصول 1 -->
+
+    <article class="product"
+      data-category="electronics"
+      data-name="گوشی شیائومی">
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85"
+          alt="گوشی هوشمند شیائومی">
+
+        <span class="deal-badge">۲۰٪ تخفیف</span>
+
+        <button class="favorite" onclick="favorite(this)">
+          ♡
+        </button>
+
+      </div>
+
+      <div class="info">
+
+        <div class="store">فروشگاه نمونه</div>
+
+        <div class="name">
+          گوشی هوشمند شیائومی
+        </div>
+
+        <div class="rating">
+          ⭐ 4.8 <span>(۱۲۵ نظر)</span>
+        </div>
+
+        <div class="price-area">
+
+          <div>
+            <div class="price">
+              ۲۳,۹۰۰,۰۰۰ تومان
+            </div>
+
+            <div class="old">
+              ۲۹,۹۰۰,۰۰۰ تومان
+            </div>
+          </div>
+
+          <div class="discount">
+            ۲۰٪ تخفیف
+          </div>
+
+        </div>
+
+        <button class="buy-button"
+          onclick="goAffiliate(
+          'گوشی هوشمند شیائومی',
+          'https://example.com/'
+          )">
+
+          🛒 خرید از فروشگاه
+
+        </button>
+
+        <div class="commission">
+          ✓ خرید از این لینک ممکن است برای آنلاین‌شاپ کمیسیون ایجاد کند.
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- محصول 2 -->
+
+    <article class="product"
+      data-category="computers"
+      data-name="لپ تاپ پرو">
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=85"
+          alt="لپ تاپ پرو">
+
+        <span class="deal-badge">۱۲٪ تخفیف</span>
+
+        <button class="favorite" onclick="favorite(this)">
+          ♡
+        </button>
+
+      </div>
+
+      <div class="info">
+
+        <div class="store">فروشگاه نمونه</div>
+
+        <div class="name">لپ‌تاپ پرو</div>
+
+        <div class="rating">
+          ⭐ 4.7 <span>(۸۹ نظر)</span>
+        </div>
+
+        <div class="price-area">
+
+          <div>
+            <div class="price">
+              ۶۹,۹۰۰,۰۰۰ تومان
+            </div>
+
+            <div class="old">
+              ۷۹,۹۰۰,۰۰۰ تومان
+            </div>
+          </div>
+
+          <div class="discount">
+            ۱۲٪ تخفیف
+          </div>
+
+        </div>
+
+        <button class="buy-button"
+          onclick="goAffiliate(
+          'لپ‌تاپ پرو',
+          'https://example.com/'
+          )">
+
+          🛒 خرید از فروشگاه
+
+        </button>
+
+        <div class="commission">
+          ✓ خرید از این لینک ممکن است برای آنلاین‌شاپ کمیسیون ایجاد کند.
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- محصول 3 -->
+
+    <article class="product"
+      data-category="audio"
+      data-name="هدفون بی سیم">
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85"
+          alt="هدفون بی سیم">
+
+        <span class="deal-badge">۳۴٪ تخفیف</span>
+
+        <button class="favorite" onclick="favorite(this)">
+          ♡
+        </button>
+
+      </div>
+
+      <div class="info">
+
+        <div class="store">فروشگاه نمونه</div>
+
+        <div class="name">هدفون بی‌سیم</div>
+
+        <div class="rating">
+          ⭐ 4.9 <span>(۲۱۰ نظر)</span>
+        </div>
+
+        <div class="price-area">
+
+          <div>
+            <div class="price">
+              ۵,۹۰۰,۰۰۰ تومان
+            </div>
+
+            <div class="old">
+              ۸,۹۰۰,۰۰۰ تومان
+            </div>
+          </div>
+
+          <div class="discount">
+            ۳۴٪ تخفیف
+          </div>
+
+        </div>
+
+        <button class="buy-button"
+          onclick="goAffiliate(
+          'هدفون بی‌سیم',
+          'https://example.com/'
+          )">
+
+          🛒 خرید از فروشگاه
+
+        </button>
+
+        <div class="commission">
+          ✓ خرید از این لینک ممکن است برای آنلاین‌شاپ کمیسیون ایجاد کند.
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- محصول 4 -->
+
+    <article class="product"
+      data-category="fashion"
+      data-name="کفش ورزشی">
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85"
+          alt="کفش ورزشی">
+
+        <span class="deal-badge">۳۵٪ تخفیف</span>
+
+        <button class="favorite" onclick="favorite(this)">
+          ♡
+        </button>
+
+      </div>
+
+      <div class="info">
+
+        <div class="store">فروشگاه نمونه</div>
+
+        <div class="name">کفش ورزشی</div>
+
+        <div class="rating">
+          ⭐ 4.6 <span>(۷۴ نظر)</span>
+        </div>
+
+        <div class="price-area">
+
+          <div>
+            <div class="price">
+              ۴,۹۰۰,۰۰۰ تومان
+            </div>
+
+            <div class="old">
+              ۷,۵۰۰,۰۰۰ تومان
+            </div>
+          </div>
+
+          <div class="discount">
+            ۳۵٪ تخفیف
+          </div>
+
+        </div>
+
+        <button class="buy-button"
+          onclick="goAffiliate(
+          'کفش ورزشی',
+          'https://example.com/'
+          )">
+
+          🛒 خرید از فروشگاه
+
+        </button>
+
+        <div class="commission">
+          ✓ خرید از این لینک ممکن است برای آنلاین‌شاپ کمیسیون ایجاد کند.
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <div id="noResults" class="no-results">
+
+    <div class="no-results-icon">🔎</div>
+
+    <h3>محصولی پیدا نشد</h3>
+
+    <p>
+      نام محصول یا دسته دیگری را امتحان کنید.
+    </p>
+
+    <button class="reset" onclick="resetSearch()">
+      نمایش همه محصولات
+    </button>
+
+  </div>
+
+</section>
+
+
+<section class="info-box">
+
+  <h2>💰 همکاری در فروش</h2>
+
+  <p>
+    آنلاین‌شاپ محصولات فروشگاه‌های مختلف را معرفی می‌کند.
+    با انتخاب گزینه «خرید از فروشگاه»، شما به فروشگاه اصلی
+    منتقل می‌شوید. اگر لینک استفاده‌شده یک لینک همکاری در
+    فروش معتبر باشد و خرید طبق شرایط برنامه همکاری انجام شود،
+    ممکن است کمیسیونی به آنلاین‌شاپ تعلق بگیرد.
+  </p>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-title">
+    🛍️ آنلاین‌شاپ
+  </div>
+
+  <p>
+    پیدا کن، مقایسه کن، بهتر خرید کن.
+  </p>
+
+  <small>
+    © ۲۰۲۶ آنلاین‌شاپ — تمامی حقوق محفوظ است.
+  </small>
+
+</footer>
+
+
+<script>
+
+function searchProducts(){
+
+  const input = document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase()
+    .trim();
+
+  const products =
+    document.querySelectorAll(".product");
+
+  let count = 0;
+
+  products.forEach(product => {
+
+    const name =
+      product.dataset.name.toLowerCase();
+
+    const category =
+      product.dataset.category.toLowerCase();
+
+    const show =
+      name.includes(input) ||
+      category.includes(input);
+
+    product.style.display =
+      show ? "" : "none";
+
+    if(show) count++;
+
+  });
+
+  updateResults(count);
+}
+
+
+function filterCategory(category,button){
+
+  const products =
+    document.querySelectorAll(".product");
+
+  document
+    .querySelectorAll(".category")
+    .forEach(item => {
+      item.classList.remove("active");
+    });
+
+  button.classList.add("active");
+
+  let count = 0;
+
+  products.forEach(product => {
+
+    const show =
+      category === "all" ||
+      product.dataset.category === category;
+
+    product.style.display =
+      show ? "" : "none";
+
+    if(show) count++;
+
+  });
+
+  document
+    .getElementById("searchInput")
+    .value = "";
+
+  updateResults(count);
+}
+
+
+function updateResults(count){
+
+  document
+    .getElementById("resultCount")
+    .textContent =
+    count + " محصول";
+
+  document
+    .getElementById("noResults")
+    .style.display =
+    count === 0 ? "block" : "none";
+
+}
+
+
+function resetSearch(){
+
+  document
+    .getElementById("searchInput")
+    .value = "";
+
+  const products =
+    document.querySelectorAll(".product");
+
+  products.forEach(product => {
+    product.style.display = "";
+  });
+
+  document
+    .querySelectorAll(".category")
+    .forEach(item => {
+      item.classList.remove("active");
+    });
+
+  document
+    .querySelector(".category")
+    .classList.add("active");
+
+  updateResults(products.length);
+}
+
+
+function favorite(button){
+
+  button.classList.toggle("saved");
+
+  button.textContent =
+    button.classList.contains("saved")
+    ? "♥"
+    : "♡";
+
+}
+
+
+function goAffiliate(productName,affiliateUrl){
+
+  if(
+    !affiliateUrl ||
+    affiliateUrl === "https://example.com/"
+  ){
+
+    alert(
+      "⚠️ لینک همکاری در فروش این محصول هنوز تنظیم نشده است.\n\n" +
+      "ابتدا لینک افیلیت واقعی فروشگاه را جایگزین کنید."
+    );
+
+    return;
+  }
+
+  let clicks =
+    JSON.parse(
+      localStorage.getItem("affiliateClicks") || "[]"
+    );
+
+  clicks.push({
+    product:productName,
+    time:new Date().toISOString()
+  });
+
+  localStorage.setItem(
+    "affiliateClicks",
+    JSON.stringify(clicks)
+  );
+
+  window.location.href = affiliateUrl;
+
+}
+
+
+function showAffiliateInfo(){
+
+  alert(
+    "💰 سیستم همکاری در فروش\n\n" +
+    "مشتری با لینک همکاری در فروش به فروشگاه اصلی می‌رود.\n\n" +
+    "اگر خرید طبق شرایط برنامه افیلیت انجام شود، " +
+    "کمیسیون برای صاحب لینک ثبت می‌شود.\n\n" +
+    "توجه: ثبت کلیک در این صفحه به‌تنهایی به معنی ثبت کمیسیون واقعی نیست."
+  );
+
+}
+
+
+document
+  .getElementById("searchInput")
+  .addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Enter"){
+        searchProducts();
+      }
+
+    }
+  );
+
+
+updateResults(
+  document.querySelectorAll(".product").length
+);
+
+</script>
+
+</body>
+</html>
     gap:9px;
   }
 
