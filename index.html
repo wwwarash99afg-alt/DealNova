@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DealNova — Smart Deals</title>
-  <meta name="description" content="Find and compare the best online deals.">
+  <title>آنلاین‌شاپ | فروشگاه اینترنتی</title>
+  <meta name="description" content="آنلاین‌شاپ؛ خرید آسان محصولات با بهترین قیمت.">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,47 +14,72 @@
 
 <header>
   <div class="header">
-    <a href="#" class="logo">Deal<span>Nova</span></a>
 
-    <button class="account" onclick="account()">
-      Account
-    </button>
+    <a href="#" class="logo">
+      🛍️ <span>آنلاین</span>‌شاپ
+    </a>
+
+    <div class="header-actions">
+
+      <button class="icon-button" onclick="showCart()">
+        🛒
+        <span id="cartCount">0</span>
+      </button>
+
+      <button class="account" onclick="account()">
+        👤 حساب من
+      </button>
+
+    </div>
+
   </div>
 </header>
 
 <main>
 
   <section class="hero">
+
     <div class="hero-content">
 
-      <div class="badge">🔥 Smart Shopping</div>
+      <div class="badge">🔥 خرید هوشمند و آسان</div>
 
-      <h1>Find Better Deals.</h1>
+      <h1>بهترین محصولات را پیدا کن</h1>
 
       <p>
-        Compare products and discover great online deals.
+        محصولات موردنظرت را جستجو کن، قیمت‌ها را مقایسه کن و با خیال راحت خرید کن.
       </p>
 
       <div class="search">
+
         <input
           id="searchInput"
           type="search"
-          placeholder="Search products..."
+          placeholder="نام محصول را جستجو کنید..."
           autocomplete="off"
         >
 
         <button onclick="searchProducts()">
-          Search
+          🔎 جستجو
         </button>
+
       </div>
 
     </div>
+
   </section>
 
   <section class="category-section">
 
     <div class="section-header">
-      <h2>Categories</h2>
+
+      <div>
+        <h2>دسته‌بندی محصولات</h2>
+
+        <p class="section-subtitle">
+          دسته موردنظر خود را انتخاب کنید
+        </p>
+      </div>
+
     </div>
 
     <div class="categories">
@@ -62,37 +87,37 @@
       <button
         class="category active"
         onclick="filterCategory('all', this)">
-        All
+        🛍️ همه
       </button>
 
       <button
         class="category"
         onclick="filterCategory('electronics', this)">
-        📱 Electronics
+        📱 موبایل و دیجیتال
       </button>
 
       <button
         class="category"
         onclick="filterCategory('computers', this)">
-        💻 Computers
+        💻 کامپیوتر
       </button>
 
       <button
         class="category"
         onclick="filterCategory('audio', this)">
-        🎧 Audio
+        🎧 لوازم صوتی
       </button>
 
       <button
         class="category"
         onclick="filterCategory('fashion', this)">
-        👟 Fashion
+        👟 پوشاک و کفش
       </button>
 
       <button
         class="category"
         onclick="filterCategory('home', this)">
-        🏠 Home
+        🏠 خانه
       </button>
 
     </div>
@@ -104,15 +129,17 @@
     <div class="section-header">
 
       <div>
-        <h2>🔥 Today's Best Deals</h2>
+
+        <h2>🔥 محصولات ویژه</h2>
 
         <p class="section-subtitle">
-          Hand-picked deals for you
+          بهترین انتخاب‌ها برای شما
         </p>
+
       </div>
 
       <span id="resultCount">
-        4 deals
+        4 محصول
       </span>
 
     </div>
@@ -122,229 +149,276 @@
       <article
         class="product"
         data-category="electronics"
-        data-name="xiaomi smartphone">
+        data-name="گوشی شیائومی">
 
         <div class="image">
-          📱
+
+          <img
+            src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85"
+            alt="گوشی هوشمند شیائومی"
+          >
 
           <span class="deal-badge">
-            -20%
+            ۲۰٪ تخفیف
           </span>
 
           <button
             class="favorite"
             onclick="favorite(this)"
-            aria-label="Save product">
+            aria-label="افزودن به علاقه‌مندی">
             ♡
           </button>
+
         </div>
 
         <div class="info">
 
           <div class="store">
-            Example Store
+            فروشگاه آنلاین‌شاپ
           </div>
 
           <div class="name">
-            Xiaomi Smartphone
+            گوشی هوشمند شیائومی
+          </div>
+
+          <div class="rating">
+            ⭐ 4.8 <span>(۱۲۵ نظر)</span>
           </div>
 
           <div class="prices">
 
             <div>
+
               <div class="price">
-                €239
+                ۲۳۹ €
               </div>
 
               <div class="old">
-                €299
+                ۲۹۹ €
               </div>
+
             </div>
 
             <div class="discount">
-              20% OFF
+              ۲۰٪ تخفیف
             </div>
 
           </div>
 
           <button
             class="deal"
-            onclick="deal('Xiaomi Smartphone')">
-            View Deal →
+            onclick="addToCart('گوشی هوشمند شیائومی', 239)">
+            🛒 افزودن به سبد
           </button>
 
         </div>
 
       </article>
+
 
       <article
         class="product"
         data-category="computers"
-        data-name="laptop pro">
+        data-name="لپ تاپ پرو">
 
         <div class="image">
-          💻
+
+          <img
+            src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=85"
+            alt="لپ تاپ"
+          >
 
           <span class="deal-badge">
-            -12%
+            ۱۲٪ تخفیف
           </span>
 
           <button
             class="favorite"
             onclick="favorite(this)"
-            aria-label="Save product">
+            aria-label="افزودن به علاقه‌مندی">
             ♡
           </button>
+
         </div>
 
         <div class="info">
 
           <div class="store">
-            Example Store
+            فروشگاه آنلاین‌شاپ
           </div>
 
           <div class="name">
-            Laptop Pro
+            لپ‌تاپ پرو
+          </div>
+
+          <div class="rating">
+            ⭐ 4.7 <span>(۸۹ نظر)</span>
           </div>
 
           <div class="prices">
 
             <div>
+
               <div class="price">
-                €699
+                ۶۹۹ €
               </div>
 
               <div class="old">
-                €799
+                ۷۹۹ €
               </div>
+
             </div>
 
             <div class="discount">
-              12% OFF
+              ۱۲٪ تخفیف
             </div>
 
           </div>
 
           <button
             class="deal"
-            onclick="deal('Laptop Pro')">
-            View Deal →
+            onclick="addToCart('لپ‌تاپ پرو', 699)">
+            🛒 افزودن به سبد
           </button>
 
         </div>
 
       </article>
+
 
       <article
         class="product"
         data-category="audio"
-        data-name="wireless headphones">
+        data-name="هدفون بی سیم">
 
         <div class="image">
-          🎧
+
+          <img
+            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85"
+            alt="هدفون بی سیم"
+          >
 
           <span class="deal-badge">
-            -34%
+            ۳۴٪ تخفیف
           </span>
 
           <button
             class="favorite"
             onclick="favorite(this)"
-            aria-label="Save product">
+            aria-label="افزودن به علاقه‌مندی">
             ♡
           </button>
+
         </div>
 
         <div class="info">
 
           <div class="store">
-            Example Store
+            فروشگاه آنلاین‌شاپ
           </div>
 
           <div class="name">
-            Wireless Headphones
+            هدفون بی‌سیم
+          </div>
+
+          <div class="rating">
+            ⭐ 4.9 <span>(۲۱۰ نظر)</span>
           </div>
 
           <div class="prices">
 
             <div>
+
               <div class="price">
-                €59
+                ۵۹ €
               </div>
 
               <div class="old">
-                €89
+                ۸۹ €
               </div>
+
             </div>
 
             <div class="discount">
-              34% OFF
+              ۳۴٪ تخفیف
             </div>
 
           </div>
 
           <button
             class="deal"
-            onclick="deal('Wireless Headphones')">
-            View Deal →
+            onclick="addToCart('هدفون بی‌سیم', 59)">
+            🛒 افزودن به سبد
           </button>
 
         </div>
 
       </article>
 
+
       <article
         class="product"
         data-category="fashion"
-        data-name="running shoes">
+        data-name="کفش ورزشی">
 
         <div class="image">
-          👟
+
+          <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85"
+            alt="کفش ورزشی"
+          >
 
           <span class="deal-badge">
-            -35%
+            ۳۵٪ تخفیف
           </span>
 
           <button
             class="favorite"
             onclick="favorite(this)"
-            aria-label="Save product">
+            aria-label="افزودن به علاقه‌مندی">
             ♡
           </button>
+
         </div>
 
         <div class="info">
 
           <div class="store">
-            Example Store
+            فروشگاه آنلاین‌شاپ
           </div>
 
           <div class="name">
-            Running Shoes
+            کفش ورزشی
+          </div>
+
+          <div class="rating">
+            ⭐ 4.6 <span>(۷۴ نظر)</span>
           </div>
 
           <div class="prices">
 
             <div>
+
               <div class="price">
-                €49
+                ۴۹ €
               </div>
 
               <div class="old">
-                €75
+                ۷۵ €
               </div>
+
             </div>
 
             <div class="discount">
-              35% OFF
+              ۳۵٪ تخفیف
             </div>
 
           </div>
 
           <button
             class="deal"
-            onclick="deal('Running Shoes')">
-            View Deal →
+            onclick="addToCart('کفش ورزشی', 49)">
+            🛒 افزودن به سبد
           </button>
 
         </div>
@@ -353,20 +427,23 @@
 
     </section>
 
+
     <div id="noResults" class="no-results">
 
       <div class="no-results-icon">
         🔎
       </div>
 
-      <h3>No deals found</h3>
+      <h3>
+        محصولی پیدا نشد
+      </h3>
 
       <p>
-        Try another product or category.
+        نام محصول یا دسته دیگری را امتحان کنید.
       </p>
 
       <button onclick="resetSearch()">
-        Show all deals
+        نمایش همه محصولات
       </button>
 
     </div>
@@ -375,25 +452,32 @@
 
 </main>
 
+
 <footer>
 
   <div class="footer-content">
 
-    <strong>DealNova</strong>
+    <strong>
+      🛍️ آنلاین‌شاپ
+    </strong>
 
     <p>
-      Find it. Compare it. Save more.
+      خرید آسان، انتخاب بهتر، قیمت مناسب‌تر.
     </p>
 
     <small>
-      © 2026 DealNova. All rights reserved.
+      © ۲۰۲۶ آنلاین‌شاپ. تمامی حقوق محفوظ است.
     </small>
 
   </div>
 
 </footer>
 
+
 <script>
+
+let cart = [];
+
 
 function searchProducts() {
 
@@ -431,8 +515,8 @@ function searchProducts() {
   });
 
   updateResults(count);
-
 }
+
 
 function filterCategory(category, button) {
 
@@ -472,22 +556,22 @@ function filterCategory(category, button) {
     .value = "";
 
   updateResults(count);
-
 }
+
 
 function updateResults(count) {
 
   document
     .getElementById("resultCount")
     .textContent =
-      count + (count === 1 ? " deal" : " deals");
+      count + " محصول";
 
   document
     .getElementById("noResults")
     .style.display =
       count === 0 ? "block" : "none";
-
 }
+
 
 function resetSearch() {
 
@@ -513,49 +597,89 @@ function resetSearch() {
     .classList.add("active");
 
   updateResults(products.length);
-
 }
 
-function deal(product) {
-
-  alert(
-    product +
-    "\n\nPurchase link will be connected later."
-  );
-
-}
 
 function favorite(button) {
 
   button.classList.toggle("saved");
 
-  if (button.classList.contains("saved")) {
-    button.textContent = "♥";
-  } else {
-    button.textContent = "♡";
+  button.textContent =
+    button.classList.contains("saved")
+      ? "♥"
+      : "♡";
+}
+
+
+function addToCart(name, price) {
+
+  cart.push({
+    name: name,
+    price: price
+  });
+
+  document
+    .getElementById("cartCount")
+    .textContent = cart.length;
+
+  alert(
+    "✅ " +
+    name +
+    "\n\nبه سبد خرید اضافه شد."
+  );
+}
+
+
+function showCart() {
+
+  if (cart.length === 0) {
+
+    alert(
+      "🛒 سبد خرید شما خالی است."
+    );
+
+    return;
   }
 
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.price;
+  });
+
+  alert(
+    "🛒 سبد خرید\n\n" +
+    "تعداد کالا: " +
+    cart.length +
+    "\nمجموع: €" +
+    total
+  );
 }
+
 
 function account() {
 
   alert(
-    "Account system will be added in the next version."
+    "👤 حساب کاربری\n\n" +
+    "سیستم حساب کاربری به‌زودی فعال می‌شود."
   );
-
 }
+
 
 document
   .getElementById("searchInput")
-  .addEventListener("keydown", function(event) {
+  .addEventListener(
+    "keydown",
+    function(event) {
 
-    if (event.key === "Enter") {
-      searchProducts();
+      if (event.key === "Enter") {
+        searchProducts();
+      }
+
     }
-
-  });
+  );
 
 </script>
 
 </body>
-            </html>
+  </html>
