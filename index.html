@@ -4,398 +4,515 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DealNova</title>
+  <title>DealNova — Smart Deals</title>
   <meta name="description" content="Find and compare the best online deals.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #151923;
-    }
-
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e8ef;
-      padding: 16px 20px;
-    }
-
-    .header {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-    }
-
-    .logo span {
-      font-weight: 400;
-    }
-
-    .account {
-      background: #151923;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 10px;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 25px 20px 80px;
-    }
-
-    .hero {
-      background: white;
-      border: 1px solid #e5e8ef;
-      border-radius: 22px;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      color: #6c7484;
-      margin-bottom: 25px;
-    }
-
-    .search {
-      max-width: 650px;
-      margin: auto;
-      display: flex;
-      background: #f5f7fb;
-      border: 1px solid #dfe3ea;
-      border-radius: 14px;
-      padding: 5px;
-    }
-
-    .search input {
-      flex: 1;
-      min-width: 0;
-      border: none;
-      outline: none;
-      background: transparent;
-      padding: 13px;
-      font-size: 15px;
-    }
-
-    .search button {
-      border: none;
-      background: #151923;
-      color: white;
-      padding: 0 20px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    h2 {
-      margin: 28px 0 15px;
-    }
-
-    .categories {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-    }
-
-    .category {
-      flex: 0 0 auto;
-      border: 1px solid #dfe3ea;
-      background: white;
-      padding: 11px 15px;
-      border-radius: 11px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .product {
-      background: white;
-      border: 1px solid #e5e8ef;
-      border-radius: 17px;
-      overflow: hidden;
-    }
-
-    .image {
-      height: 170px;
-      background: #eef1f6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 55px;
-    }
-
-    .info {
-      padding: 14px;
-    }
-
-    .name {
-      font-weight: bold;
-      margin-bottom: 7px;
-    }
-
-    .store {
-      color: #7c8492;
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-    .prices {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .old {
-      color: #9299a6;
-      text-decoration: line-through;
-      font-size: 12px;
-    }
-
-    .discount {
-      background: #e7f7ec;
-      padding: 5px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .deal {
-      width: 100%;
-      border: none;
-      background: #151923;
-      color: white;
-      padding: 11px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #7c8492;
-      font-size: 13px;
-    }
-
-    @media (max-width: 850px) {
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      main {
-        padding: 15px 12px 60px;
-      }
-
-      .hero {
-        padding: 30px 15px;
-      }
-
-      .hero h1 {
-        font-size: 29px;
-      }
-
-      .products {
-        gap: 10px;
-      }
-
-      .image {
-        height: 130px;
-      }
-
-      .info {
-        padding: 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
   <div class="header">
-    <div class="logo">Deal<span>Nova</span></div>
-    <button class="account" onclick="account()">Account</button>
+    <a href="#" class="logo">Deal<span>Nova</span></a>
+
+    <button class="account" onclick="account()">
+      Account
+    </button>
   </div>
 </header>
 
 <main>
 
   <section class="hero">
-    <h1>Find Better Deals.</h1>
-    <p>Compare products and discover great online deals.</p>
+    <div class="hero-content">
 
-    <div class="search">
-      <input id="searchInput" placeholder="Search products...">
-      <button onclick="searchProducts()">Search</button>
+      <div class="badge">🔥 Smart Shopping</div>
+
+      <h1>Find Better Deals.</h1>
+
+      <p>
+        Compare products and discover great online deals.
+      </p>
+
+      <div class="search">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search products..."
+          autocomplete="off"
+        >
+
+        <button onclick="searchProducts()">
+          Search
+        </button>
+      </div>
+
     </div>
   </section>
 
-  <h2>Categories</h2>
+  <section class="category-section">
 
-  <div class="categories">
-    <button class="category">📱 Electronics</button>
-    <button class="category">💻 Computers</button>
-    <button class="category">🎧 Audio</button>
-    <button class="category">👟 Fashion</button>
-    <button class="category">🏠 Home</button>
-  </div>
+    <div class="section-header">
+      <h2>Categories</h2>
+    </div>
 
-  <h2>🔥 Today's Best Deals</h2>
+    <div class="categories">
 
-  <section class="products">
+      <button
+        class="category active"
+        onclick="filterCategory('all', this)">
+        All
+      </button>
 
-    <article class="product">
-      <div class="image">📱</div>
+      <button
+        class="category"
+        onclick="filterCategory('electronics', this)">
+        📱 Electronics
+      </button>
 
-      <div class="info">
-        <div class="name">Xiaomi Smartphone</div>
-        <div class="store">Example Store</div>
+      <button
+        class="category"
+        onclick="filterCategory('computers', this)">
+        💻 Computers
+      </button>
 
-        <div class="prices">
-          <div>
-            <div class="price">€239</div>
-            <div class="old">€299</div>
-          </div>
+      <button
+        class="category"
+        onclick="filterCategory('audio', this)">
+        🎧 Audio
+      </button>
 
-          <div class="discount">-20%</div>
+      <button
+        class="category"
+        onclick="filterCategory('fashion', this)">
+        👟 Fashion
+      </button>
+
+      <button
+        class="category"
+        onclick="filterCategory('home', this)">
+        🏠 Home
+      </button>
+
+    </div>
+
+  </section>
+
+  <section class="deals-section">
+
+    <div class="section-header">
+
+      <div>
+        <h2>🔥 Today's Best Deals</h2>
+
+        <p class="section-subtitle">
+          Hand-picked deals for you
+        </p>
+      </div>
+
+      <span id="resultCount">
+        4 deals
+      </span>
+
+    </div>
+
+    <section class="products" id="products">
+
+      <article
+        class="product"
+        data-category="electronics"
+        data-name="xiaomi smartphone">
+
+        <div class="image">
+          📱
+
+          <span class="deal-badge">
+            -20%
+          </span>
+
+          <button
+            class="favorite"
+            onclick="favorite(this)"
+            aria-label="Save product">
+            ♡
+          </button>
         </div>
 
-        <button class="deal" onclick="deal('Xiaomi Smartphone')">
-          View Deal
-        </button>
-      </div>
-    </article>
+        <div class="info">
 
-    <article class="product">
-      <div class="image">💻</div>
-
-      <div class="info">
-        <div class="name">Laptop Pro</div>
-        <div class="store">Example Store</div>
-
-        <div class="prices">
-          <div>
-            <div class="price">€699</div>
-            <div class="old">€799</div>
+          <div class="store">
+            Example Store
           </div>
 
-          <div class="discount">-12%</div>
-        </div>
-
-        <button class="deal" onclick="deal('Laptop Pro')">
-          View Deal
-        </button>
-      </div>
-    </article>
-
-    <article class="product">
-      <div class="image">🎧</div>
-
-      <div class="info">
-        <div class="name">Wireless Headphones</div>
-        <div class="store">Example Store</div>
-
-        <div class="prices">
-          <div>
-            <div class="price">€59</div>
-            <div class="old">€89</div>
+          <div class="name">
+            Xiaomi Smartphone
           </div>
 
-          <div class="discount">-34%</div>
-        </div>
+          <div class="prices">
 
-        <button class="deal" onclick="deal('Wireless Headphones')">
-          View Deal
-        </button>
-      </div>
-    </article>
+            <div>
+              <div class="price">
+                €239
+              </div>
 
-    <article class="product">
-      <div class="image">👟</div>
+              <div class="old">
+                €299
+              </div>
+            </div>
 
-      <div class="info">
-        <div class="name">Running Shoes</div>
-        <div class="store">Example Store</div>
+            <div class="discount">
+              20% OFF
+            </div>
 
-        <div class="prices">
-          <div>
-            <div class="price">€49</div>
-            <div class="old">€75</div>
           </div>
 
-          <div class="discount">-35%</div>
+          <button
+            class="deal"
+            onclick="deal('Xiaomi Smartphone')">
+            View Deal →
+          </button>
+
         </div>
 
-        <button class="deal" onclick="deal('Running Shoes')">
-          View Deal
-        </button>
+      </article>
+
+      <article
+        class="product"
+        data-category="computers"
+        data-name="laptop pro">
+
+        <div class="image">
+          💻
+
+          <span class="deal-badge">
+            -12%
+          </span>
+
+          <button
+            class="favorite"
+            onclick="favorite(this)"
+            aria-label="Save product">
+            ♡
+          </button>
+        </div>
+
+        <div class="info">
+
+          <div class="store">
+            Example Store
+          </div>
+
+          <div class="name">
+            Laptop Pro
+          </div>
+
+          <div class="prices">
+
+            <div>
+              <div class="price">
+                €699
+              </div>
+
+              <div class="old">
+                €799
+              </div>
+            </div>
+
+            <div class="discount">
+              12% OFF
+            </div>
+
+          </div>
+
+          <button
+            class="deal"
+            onclick="deal('Laptop Pro')">
+            View Deal →
+          </button>
+
+        </div>
+
+      </article>
+
+      <article
+        class="product"
+        data-category="audio"
+        data-name="wireless headphones">
+
+        <div class="image">
+          🎧
+
+          <span class="deal-badge">
+            -34%
+          </span>
+
+          <button
+            class="favorite"
+            onclick="favorite(this)"
+            aria-label="Save product">
+            ♡
+          </button>
+        </div>
+
+        <div class="info">
+
+          <div class="store">
+            Example Store
+          </div>
+
+          <div class="name">
+            Wireless Headphones
+          </div>
+
+          <div class="prices">
+
+            <div>
+              <div class="price">
+                €59
+              </div>
+
+              <div class="old">
+                €89
+              </div>
+            </div>
+
+            <div class="discount">
+              34% OFF
+            </div>
+
+          </div>
+
+          <button
+            class="deal"
+            onclick="deal('Wireless Headphones')">
+            View Deal →
+          </button>
+
+        </div>
+
+      </article>
+
+      <article
+        class="product"
+        data-category="fashion"
+        data-name="running shoes">
+
+        <div class="image">
+          👟
+
+          <span class="deal-badge">
+            -35%
+          </span>
+
+          <button
+            class="favorite"
+            onclick="favorite(this)"
+            aria-label="Save product">
+            ♡
+          </button>
+        </div>
+
+        <div class="info">
+
+          <div class="store">
+            Example Store
+          </div>
+
+          <div class="name">
+            Running Shoes
+          </div>
+
+          <div class="prices">
+
+            <div>
+              <div class="price">
+                €49
+              </div>
+
+              <div class="old">
+                €75
+              </div>
+            </div>
+
+            <div class="discount">
+              35% OFF
+            </div>
+
+          </div>
+
+          <button
+            class="deal"
+            onclick="deal('Running Shoes')">
+            View Deal →
+          </button>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <div id="noResults" class="no-results">
+
+      <div class="no-results-icon">
+        🔎
       </div>
-    </article>
+
+      <h3>No deals found</h3>
+
+      <p>
+        Try another product or category.
+      </p>
+
+      <button onclick="resetSearch()">
+        Show all deals
+      </button>
+
+    </div>
 
   </section>
 
 </main>
 
 <footer>
-  © 2026 DealNova — Smart Deals
+
+  <div class="footer-content">
+
+    <strong>DealNova</strong>
+
+    <p>
+      Find it. Compare it. Save more.
+    </p>
+
+    <small>
+      © 2026 DealNova. All rights reserved.
+    </small>
+
+  </div>
+
 </footer>
 
 <script>
 
 function searchProducts() {
 
-  const search =
+  const input =
     document
       .getElementById("searchInput")
       .value
-      .toLowerCase();
+      .toLowerCase()
+      .trim();
+
+  const products =
+    document.querySelectorAll(".product");
+
+  let count = 0;
+
+  products.forEach(product => {
+
+    const name =
+      product.dataset.name.toLowerCase();
+
+    const category =
+      product.dataset.category.toLowerCase();
+
+    const matches =
+      name.includes(input) ||
+      category.includes(input);
+
+    product.style.display =
+      matches ? "" : "none";
+
+    if (matches) {
+      count++;
+    }
+
+  });
+
+  updateResults(count);
+
+}
+
+function filterCategory(category, button) {
+
+  const products =
+    document.querySelectorAll(".product");
+
+  document
+    .querySelectorAll(".category")
+    .forEach(item => {
+      item.classList.remove("active");
+    });
+
+  button.classList.add("active");
+
+  let count = 0;
+
+  products.forEach(product => {
+
+    const productCategory =
+      product.dataset.category;
+
+    const show =
+      category === "all" ||
+      productCategory === category;
+
+    product.style.display =
+      show ? "" : "none";
+
+    if (show) {
+      count++;
+    }
+
+  });
+
+  document
+    .getElementById("searchInput")
+    .value = "";
+
+  updateResults(count);
+
+}
+
+function updateResults(count) {
+
+  document
+    .getElementById("resultCount")
+    .textContent =
+      count + (count === 1 ? " deal" : " deals");
+
+  document
+    .getElementById("noResults")
+    .style.display =
+      count === 0 ? "block" : "none";
+
+}
+
+function resetSearch() {
+
+  document
+    .getElementById("searchInput")
+    .value = "";
 
   const products =
     document.querySelectorAll(".product");
 
   products.forEach(product => {
-
-    const name =
-      product
-        .querySelector(".name")
-        .textContent
-        .toLowerCase();
-
-    product.style.display =
-      name.includes(search) ? "" : "none";
-
+    product.style.display = "";
   });
+
+  document
+    .querySelectorAll(".category")
+    .forEach(item => {
+      item.classList.remove("active");
+    });
+
+  document
+    .querySelector(".category")
+    .classList.add("active");
+
+  updateResults(products.length);
 
 }
 
@@ -408,15 +525,37 @@ function deal(product) {
 
 }
 
+function favorite(button) {
+
+  button.classList.toggle("saved");
+
+  if (button.classList.contains("saved")) {
+    button.textContent = "♥";
+  } else {
+    button.textContent = "♡";
+  }
+
+}
+
 function account() {
 
   alert(
-    "Account system will be added later."
+    "Account system will be added in the next version."
   );
 
 }
 
+document
+  .getElementById("searchInput")
+  .addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+      searchProducts();
+    }
+
+  });
+
 </script>
 
 </body>
-</html>
+            </html>
