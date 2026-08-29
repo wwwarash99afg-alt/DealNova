@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>آنلاین‌شاپ | فروشگاه اینترنتی</title>
-  <meta name="description" content="آنلاین‌شاپ؛ خرید آسان محصولات با بهترین قیمت.">
+
+  <meta
+    name="description"
+    content="آنلاین‌شاپ؛ خرید آسان محصولات با بهترین قیمت."
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,6 +22,7 @@
 <body>
 
 <header>
+
   <div class="header">
 
     <a href="#" class="logo">
@@ -21,19 +31,28 @@
 
     <div class="header-actions">
 
-      <button class="icon-button" onclick="showCart()">
+      <button
+        class="icon-button"
+        onclick="openCart()"
+        aria-label="سبد خرید"
+      >
         🛒
         <span id="cartCount">0</span>
       </button>
 
-      <button class="account" onclick="account()">
+      <button
+        class="account"
+        onclick="account()"
+      >
         👤 حساب من
       </button>
 
     </div>
 
   </div>
+
 </header>
+
 
 <main>
 
@@ -41,12 +60,17 @@
 
     <div class="hero-content">
 
-      <div class="badge">🔥 خرید هوشمند و آسان</div>
+      <div class="badge">
+        🔥 خرید هوشمند و آسان
+      </div>
 
-      <h1>بهترین محصولات را پیدا کن</h1>
+      <h1>
+        بهترین محصولات را پیدا کن
+      </h1>
 
       <p>
-        محصولات موردنظرت را جستجو کن، قیمت‌ها را مقایسه کن و با خیال راحت خرید کن.
+        محصولات موردنظرت را جستجو کن،
+        قیمت‌ها را مقایسه کن و با خیال راحت خرید کن.
       </p>
 
       <div class="search">
@@ -68,55 +92,67 @@
 
   </section>
 
+
   <section class="category-section">
 
     <div class="section-header">
 
       <div>
-        <h2>دسته‌بندی محصولات</h2>
+
+        <h2>
+          دسته‌بندی محصولات
+        </h2>
 
         <p class="section-subtitle">
           دسته موردنظر خود را انتخاب کنید
         </p>
+
       </div>
 
     </div>
+
 
     <div class="categories">
 
       <button
         class="category active"
-        onclick="filterCategory('all', this)">
+        onclick="filterCategory('all', this)"
+      >
         🛍️ همه
       </button>
 
       <button
         class="category"
-        onclick="filterCategory('electronics', this)">
+        onclick="filterCategory('electronics', this)"
+      >
         📱 موبایل و دیجیتال
       </button>
 
       <button
         class="category"
-        onclick="filterCategory('computers', this)">
+        onclick="filterCategory('computers', this)"
+      >
         💻 کامپیوتر
       </button>
 
       <button
         class="category"
-        onclick="filterCategory('audio', this)">
+        onclick="filterCategory('audio', this)"
+      >
         🎧 لوازم صوتی
       </button>
 
       <button
         class="category"
-        onclick="filterCategory('fashion', this)">
+        onclick="filterCategory('fashion', this)"
+      >
         👟 پوشاک و کفش
       </button>
 
       <button
         class="category"
-        onclick="filterCategory('home', this)">
+        onclick="filterCategory('home', this)"
+      >
         🏠 خانه
       </button>
 
@@ -124,13 +160,16 @@
 
   </section>
 
+
   <section class="deals-section">
 
     <div class="section-header">
 
       <div>
 
-        <h2>🔥 محصولات ویژه</h2>
+        <h2>
+          🔥 محصولات ویژه
+        </h2>
 
         <p class="section-subtitle">
           بهترین انتخاب‌ها برای شما
@@ -144,12 +183,20 @@
 
     </div>
 
-    <section class="products" id="products">
+
+    <section
+      class="products"
+      id="products"
+    >
+
+
+      <!-- PRODUCT 1 -->
 
       <article
         class="product"
         data-category="electronics"
-        data-name="گوشی شیائومی">
+        data-name="گوشی شیائومی"
+      >
 
         <div class="image">
 
@@ -165,11 +212,12 @@
           <button
             class="favorite"
             onclick="favorite(this)"
-            aria-label="افزودن به علاقه‌مندی">
+          >
             ♡
           </button>
 
         </div>
+
 
         <div class="info">
 
@@ -182,8 +230,12 @@
           </div>
 
           <div class="rating">
-            ⭐ 4.8 <span>(۱۲۵ نظر)</span>
+            ⭐ 4.8
+            <span>
+              (۱۲۵ نظر)
+            </span>
           </div>
+
 
           <div class="prices">
 
@@ -205,9 +257,15 @@
 
           </div>
 
+
           <button
             class="deal"
-            onclick="addToCart('گوشی هوشمند شیائومی', 239)">
+            onclick="addToCart(
+              'گوشی هوشمند شیائومی',
+              239,
+              'https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85'
+            )"
+          >
             🛒 افزودن به سبد
           </button>
 
@@ -216,10 +274,13 @@
       </article>
 
 
+      <!-- PRODUCT 2 -->
+
       <article
         class="product"
         data-category="computers"
-        data-name="لپ تاپ پرو">
+        data-name="لپ تاپ پرو"
+      >
 
         <div class="image">
 
@@ -235,11 +296,12 @@
           <button
             class="favorite"
             onclick="favorite(this)"
-            aria-label="افزودن به علاقه‌مندی">
+          >
             ♡
           </button>
 
         </div>
+
 
         <div class="info">
 
@@ -252,8 +314,12 @@
           </div>
 
           <div class="rating">
-            ⭐ 4.7 <span>(۸۹ نظر)</span>
+            ⭐ 4.7
+            <span>
+              (۸۹ نظر)
+            </span>
           </div>
+
 
           <div class="prices">
 
@@ -275,9 +341,15 @@
 
           </div>
 
+
           <button
             class="deal"
-            onclick="addToCart('لپ‌تاپ پرو', 699)">
+            onclick="addToCart(
+              'لپ‌تاپ پرو',
+              699,
+              'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=85'
+            )"
+          >
             🛒 افزودن به سبد
           </button>
 
@@ -286,10 +358,13 @@
       </article>
 
 
+      <!-- PRODUCT 3 -->
+
       <article
         class="product"
         data-category="audio"
-        data-name="هدفون بی سیم">
+        data-name="هدفون بی سیم"
+      >
 
         <div class="image">
 
@@ -305,11 +380,12 @@
           <button
             class="favorite"
             onclick="favorite(this)"
-            aria-label="افزودن به علاقه‌مندی">
+          >
             ♡
           </button>
 
         </div>
+
 
         <div class="info">
 
@@ -322,8 +398,12 @@
           </div>
 
           <div class="rating">
-            ⭐ 4.9 <span>(۲۱۰ نظر)</span>
+            ⭐ 4.9
+            <span>
+              (۲۱۰ نظر)
+            </span>
           </div>
+
 
           <div class="prices">
 
@@ -345,9 +425,15 @@
 
           </div>
 
+
           <button
             class="deal"
-            onclick="addToCart('هدفون بی‌سیم', 59)">
+            onclick="addToCart(
+              'هدفون بی‌سیم',
+              59,
+              'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85'
+            )"
+          >
             🛒 افزودن به سبد
           </button>
 
@@ -356,10 +442,13 @@
       </article>
 
 
+      <!-- PRODUCT 4 -->
+
       <article
         class="product"
         data-category="fashion"
-        data-name="کفش ورزشی">
+        data-name="کفش ورزشی"
+      >
 
         <div class="image">
 
@@ -375,11 +464,12 @@
           <button
             class="favorite"
             onclick="favorite(this)"
-            aria-label="افزودن به علاقه‌مندی">
+          >
             ♡
           </button>
 
         </div>
+
 
         <div class="info">
 
@@ -392,8 +482,12 @@
           </div>
 
           <div class="rating">
-            ⭐ 4.6 <span>(۷۴ نظر)</span>
+            ⭐ 4.6
+            <span>
+              (۷۴ نظر)
+            </span>
           </div>
+
 
           <div class="prices">
 
@@ -415,9 +509,15 @@
 
           </div>
 
+
           <button
             class="deal"
-            onclick="addToCart('کفش ورزشی', 49)">
+            onclick="addToCart(
+              'کفش ورزشی',
+              49,
+              'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85'
+            )"
+          >
             🛒 افزودن به سبد
           </button>
 
@@ -428,7 +528,10 @@
     </section>
 
 
-    <div id="noResults" class="no-results">
+    <div
+      id="noResults"
+      class="no-results"
+    >
 
       <div class="no-results-icon">
         🔎
@@ -474,10 +577,92 @@
 </footer>
 
 
+<!-- CART -->
+
+<div
+  id="cartOverlay"
+  class="cart-overlay"
+  onclick="closeCart()"
+></div>
+
+
+<aside
+  id="cartPanel"
+  class="cart-panel"
+>
+
+  <div class="cart-header">
+
+    <h2>
+      🛒 سبد خرید
+    </h2>
+
+    <button
+      class="cart-close"
+      onclick="closeCart()"
+    >
+      ✕
+    </button>
+
+  </div>
+
+
+  <div
+    id="cartItems"
+    class="cart-items"
+  >
+
+    <div class="empty-cart">
+
+      <div>
+        🛒
+      </div>
+
+      <h3>
+        سبد خرید خالی است
+      </h3>
+
+      <p>
+        محصولات موردنظرت را به سبد اضافه کن.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="cart-footer">
+
+    <div class="cart-total">
+
+      <span>
+        مجموع:
+      </span>
+
+      <strong id="cartTotal">
+        €0
+      </strong>
+
+    </div>
+
+    <button
+      class="checkout"
+      onclick="checkout()"
+    >
+      ادامه خرید
+    </button>
+
+  </div>
+
+</aside>
+
+
 <script>
 
 let cart = [];
 
+
+/* SEARCH */
 
 function searchProducts() {
 
@@ -496,10 +681,12 @@ function searchProducts() {
   products.forEach(product => {
 
     const name =
-      product.dataset.name.toLowerCase();
+      product.dataset.name
+        .toLowerCase();
 
     const category =
-      product.dataset.category.toLowerCase();
+      product.dataset.category
+        .toLowerCase();
 
     const matches =
       name.includes(input) ||
@@ -517,6 +704,8 @@ function searchProducts() {
   updateResults(count);
 }
 
+
+/* CATEGORY */
 
 function filterCategory(category, button) {
 
@@ -559,6 +748,8 @@ function filterCategory(category, button) {
 }
 
 
+/* RESULTS */
+
 function updateResults(count) {
 
   document
@@ -569,9 +760,13 @@ function updateResults(count) {
   document
     .getElementById("noResults")
     .style.display =
-      count === 0 ? "block" : "none";
+      count === 0
+        ? "block"
+        : "none";
 }
 
+
+/* RESET */
 
 function resetSearch() {
 
@@ -600,6 +795,8 @@ function resetSearch() {
 }
 
 
+/* FAVORITE */
+
 function favorite(button) {
 
   button.classList.toggle("saved");
@@ -611,60 +808,244 @@ function favorite(button) {
 }
 
 
-function addToCart(name, price) {
+/* ADD CART */
 
-  cart.push({
-    name: name,
-    price: price
-  });
+function addToCart(name, price, image) {
 
-  document
-    .getElementById("cartCount")
-    .textContent = cart.length;
+  const existing =
+    cart.find(item => item.name === name);
 
-  alert(
-    "✅ " +
-    name +
-    "\n\nبه سبد خرید اضافه شد."
-  );
+  if (existing) {
+
+    existing.quantity++;
+
+  } else {
+
+    cart.push({
+      name: name,
+      price: price,
+      image: image,
+      quantity: 1
+    });
+
+  }
+
+  updateCart();
+
+  openCart();
 }
 
 
-function showCart() {
+/* UPDATE CART */
+
+function updateCart() {
+
+  const cartCount =
+    cart.reduce(
+      (total, item) =>
+        total + item.quantity,
+      0
+    );
+
+  document
+    .getElementById("cartCount")
+    .textContent =
+      cartCount;
+
+
+  const cartItems =
+    document.getElementById("cartItems");
+
+  const cartTotal =
+    document.getElementById("cartTotal");
+
+
+  if (cart.length === 0) {
+
+    cartItems.innerHTML = `
+      <div class="empty-cart">
+        <div>🛒</div>
+        <h3>سبد خرید خالی است</h3>
+        <p>
+          محصولات موردنظرت را به سبد اضافه کن.
+        </p>
+      </div>
+    `;
+
+    cartTotal.textContent = "€0";
+
+    return;
+  }
+
+
+  let total = 0;
+
+  cartItems.innerHTML = "";
+
+
+  cart.forEach((item, index) => {
+
+    total +=
+      item.price * item.quantity;
+
+
+    const itemElement =
+      document.createElement("div");
+
+    itemElement.className =
+      "cart-item";
+
+
+    itemElement.innerHTML = `
+
+      <img
+        src="${item.image}"
+        alt="${item.name}"
+      >
+
+      <div class="cart-item-info">
+
+        <strong>
+          ${item.name}
+        </strong>
+
+        <div class="cart-item-price">
+          €${item.price}
+        </div>
+
+        <div class="quantity">
+
+          <button
+            onclick="changeQuantity(${index}, -1)"
+          >
+            −
+          </button>
+
+          <span>
+            ${item.quantity}
+          </span>
+
+          <button
+            onclick="changeQuantity(${index}, 1)"
+          >
+            +
+          </button>
+
+          <button
+            class="remove"
+            onclick="removeFromCart(${index})"
+          >
+            🗑️
+          </button>
+
+        </div>
+
+      </div>
+    `;
+
+
+    cartItems.appendChild(itemElement);
+
+  });
+
+
+  cartTotal.textContent =
+    "€" + total;
+}
+
+
+/* QUANTITY */
+
+function changeQuantity(index, change) {
+
+  cart[index].quantity += change;
+
+  if (cart[index].quantity <= 0) {
+
+    cart.splice(index, 1);
+
+  }
+
+  updateCart();
+}
+
+
+/* REMOVE */
+
+function removeFromCart(index) {
+
+  cart.splice(index, 1);
+
+  updateCart();
+}
+
+
+/* OPEN CART */
+
+function openCart() {
+
+  document
+    .getElementById("cartPanel")
+    .classList.add("open");
+
+  document
+    .getElementById("cartOverlay")
+    .classList.add("show");
+
+  document.body.style.overflow =
+    "hidden";
+}
+
+
+/* CLOSE CART */
+
+function closeCart() {
+
+  document
+    .getElementById("cartPanel")
+    .classList.remove("open");
+
+  document
+    .getElementById("cartOverlay")
+    .classList.remove("show");
+
+  document.body.style.overflow =
+    "";
+}
+
+
+/* CHECKOUT */
+
+function checkout() {
 
   if (cart.length === 0) {
 
     alert(
-      "🛒 سبد خرید شما خالی است."
+      "سبد خرید شما خالی است."
     );
 
     return;
   }
 
-  let total = 0;
-
-  cart.forEach(item => {
-    total += item.price;
-  });
-
   alert(
-    "🛒 سبد خرید\n\n" +
-    "تعداد کالا: " +
-    cart.length +
-    "\nمجموع: €" +
-    total
+    "✅ سفارش شما آماده ثبت است.\n\n" +
+    "سیستم پرداخت در مرحله بعد اضافه می‌شود."
   );
 }
 
+
+/* ACCOUNT */
 
 function account() {
 
   alert(
     "👤 حساب کاربری\n\n" +
-    "سیستم حساب کاربری به‌زودی فعال می‌شود."
+    "سیستم حساب کاربری در مرحله بعد اضافه می‌شود."
   );
 }
 
+
+/* ENTER SEARCH */
 
 document
   .getElementById("searchInput")
@@ -673,7 +1054,9 @@ document
     function(event) {
 
       if (event.key === "Enter") {
+
         searchProducts();
+
       }
 
     }
