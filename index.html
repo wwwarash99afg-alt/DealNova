@@ -1,1046 +1,1506 @@
-<!DOCTYPE html><html lang="fa" dir="rtl"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>آنلاین‌شاپ | خرید و مقایسه محصولات</title><meta
-name="description"
-content="آنلاین‌شاپ؛ پیدا کردن محصولات و خرید از فروشگاه‌های معتبر."
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
-«»
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>آنلاین‌شاپ | خرید هوشمند</title>
+
+<meta
+  name="description"
+  content="آنلاین‌شاپ؛ پیدا کردن محصولات و خرید از فروشگاه‌های معتبر."
+>
 
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 :root{
---bg:#f5f7fb;
---card:#ffffff;
---text:#151923;
---muted:#727989;
---border:#e5e8ef;
---dark:#151923;
---accent:#635bff;
---green:#18a957;
---red:#e63962;
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --text:#151923;
+  --muted:#727989;
+  --border:#e5e8ef;
+  --dark:#151923;
+  --accent:#635bff;
+  --green:#18a957;
+  --red:#e63962;
 }
 
 body{
-font-family:Arial,sans-serif;
-background:var(--bg);
-color:var(--text);
-line-height:1.7;
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
 }
 
 button,
 input{
-font-family:inherit;
+  font-family:inherit;
 }
 
 button{
-cursor:pointer;
+  cursor:pointer;
 }
 
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-background:rgba(255,255,255,.96);
-border-bottom:1px solid var(--border);
-padding:15px 18px;
-position:sticky;
-top:0;
-z-index:20;
-backdrop-filter:blur(12px);
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--border);
+  padding:15px 18px;
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(12px);
 }
 
 .header{
-max-width:1100px;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
 }
 
 .logo{
-text-decoration:none;
-color:var(--text);
-font-size:25px;
-font-weight:900;
+  text-decoration:none;
+  color:var(--text);
+  font-size:25px;
+  font-weight:900;
 }
 
 .logo span{
-color:var(--accent);
+  color:var(--accent);
 }
 
 .header-button{
-border:none;
-background:var(--dark);
-color:white;
-padding:10px 15px;
-border-radius:12px;
-font-weight:800;
+  border:none;
+  background:var(--dark);
+  color:white;
+  padding:10px 15px;
+  border-radius:12px;
+  font-weight:800;
 }
+
+
+/* =========================
+   MAIN
+========================= */
 
 main{
-max-width:1100px;
-margin:auto;
-padding:22px 15px 60px;
+  max-width:1100px;
+  margin:auto;
+  padding:22px 15px 60px;
 }
 
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
-position:relative;
-overflow:hidden;
-background:
-radial-gradient(circle at 15% 20%,#ddd9ff 0,transparent 30%),
-radial-gradient(circle at 85% 80%,#d8f5ff 0,transparent 30%),
-white;
-border:1px solid var(--border);
-border-radius:25px;
-padding:55px 20px;
-text-align:center;
+  position:relative;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      #ddd9ff 0,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      #d8f5ff 0,
+      transparent 30%
+    ),
+    white;
+
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:55px 20px;
+  text-align:center;
 }
 
 .hero-content{
-max-width:720px;
-margin:auto;
+  max-width:720px;
+  margin:auto;
 }
 
 .badge{
-display:inline-block;
-background:#eeeeff;
-color:var(--accent);
-border:1px solid #ddd9ff;
-padding:7px 13px;
-border-radius:999px;
-font-size:13px;
-font-weight:800;
-margin-bottom:15px;
+  display:inline-block;
+  background:#eeeeff;
+  color:var(--accent);
+  border:1px solid #ddd9ff;
+  padding:7px 13px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:15px;
 }
 
 .hero h1{
-font-size:43px;
-line-height:1.2;
-margin-bottom:13px;
+  font-size:43px;
+  line-height:1.2;
+  margin-bottom:13px;
 }
 
 .hero p{
-color:var(--muted);
-font-size:16px;
-margin-bottom:25px;
+  color:var(--muted);
+  font-size:16px;
+  margin-bottom:25px;
 }
 
+
+/* =========================
+   SEARCH
+========================= */
+
 .search{
-max-width:650px;
-margin:auto;
-display:flex;
-background:white;
-border:1px solid #dfe3ea;
-border-radius:15px;
-padding:5px;
-box-shadow:0 10px 30px rgba(20,25,35,.08);
+  max-width:650px;
+  margin:auto;
+
+  display:flex;
+
+  background:white;
+  border:1px solid #dfe3ea;
+  border-radius:15px;
+  padding:5px;
+
+  box-shadow:
+    0 10px 30px rgba(20,25,35,.08);
 }
 
 .search input{
-flex:1;
-min-width:0;
-border:none;
-outline:none;
-padding:13px;
-font-size:14px;
-background:transparent;
+  flex:1;
+  min-width:0;
+
+  border:none;
+  outline:none;
+
+  padding:13px;
+
+  font-size:14px;
+  background:transparent;
 }
 
 .search button{
-border:none;
-background:var(--dark);
-color:white;
-padding:0 20px;
-border-radius:10px;
-font-weight:800;
+  border:none;
+  background:var(--dark);
+  color:white;
+
+  padding:0 20px;
+
+  border-radius:10px;
+
+  font-weight:800;
 }
 
+
+/* =========================
+   SECTION
+========================= */
+
 .section{
-margin-top:28px;
+  margin-top:28px;
 }
 
 .section-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-margin-bottom:14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
 }
 
 .section-header h2{
-font-size:22px;
+  font-size:22px;
 }
 
 .section-subtitle{
-color:var(--muted);
-font-size:13px;
+  color:var(--muted);
+  font-size:13px;
 }
 
+
+/* =========================
+   CATEGORIES
+========================= */
+
 .categories{
-display:flex;
-gap:9px;
-overflow-x:auto;
-padding-bottom:5px;
-scrollbar-width:none;
+  display:flex;
+  gap:9px;
+  overflow-x:auto;
+  padding-bottom:5px;
+  scrollbar-width:none;
 }
 
 .categories::-webkit-scrollbar{
-display:none;
+  display:none;
 }
 
 .category{
-flex:0 0 auto;
-border:1px solid var(--border);
-background:white;
-color:var(--text);
-padding:10px 15px;
-border-radius:11px;
-font-weight:700;
-transition:.2s;
+  flex:0 0 auto;
+
+  border:1px solid var(--border);
+  background:white;
+  color:var(--text);
+
+  padding:10px 15px;
+
+  border-radius:11px;
+
+  font-weight:700;
+
+  transition:.2s;
 }
 
 .category.active,
 .category:hover{
-background:var(--dark);
-color:white;
-border-color:var(--dark);
+  background:var(--dark);
+  color:white;
+  border-color:var(--dark);
 }
 
+
+/* =========================
+   PRODUCTS
+========================= */
+
 .products{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
 }
 
 .product{
-background:white;
-border:1px solid var(--border);
-border-radius:18px;
-overflow:hidden;
-transition:.2s;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  transition:.2s;
 }
 
 .product:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 35px rgba(20,25,35,.1);
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 15px 35px rgba(20,25,35,.1);
 }
 
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
 .product-image{
-height:210px;
-position:relative;
-background:#f0f2f6;
-overflow:hidden;
+  height:210px;
+  position:relative;
+  background:#f0f2f6;
+  overflow:hidden;
 }
 
 .product-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 .deal-badge{
-position:absolute;
-top:11px;
-right:11px;
-background:var(--dark);
-color:white;
-padding:5px 8px;
-border-radius:7px;
-font-size:11px;
-font-weight:900;
+  position:absolute;
+  top:11px;
+  right:11px;
+
+  background:var(--dark);
+  color:white;
+
+  padding:5px 8px;
+
+  border-radius:7px;
+
+  font-size:11px;
+  font-weight:900;
 }
 
 .favorite{
-position:absolute;
-top:10px;
-left:10px;
-width:36px;
-height:36px;
-border:none;
-border-radius:50%;
-background:rgba(255,255,255,.92);
-font-size:21px;
+  position:absolute;
+  top:10px;
+  left:10px;
+
+  width:36px;
+  height:36px;
+
+  border:none;
+  border-radius:50%;
+
+  background:rgba(255,255,255,.92);
+
+  font-size:21px;
 }
 
 .favorite.saved{
-color:var(--red);
+  color:var(--red);
 }
 
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
 .info{
-padding:14px;
+  padding:14px;
 }
 
 .store{
-color:var(--muted);
-font-size:12px;
-margin-bottom:5px;
+  color:var(--muted);
+  font-size:12px;
+  margin-bottom:5px;
 }
 
 .name{
-font-weight:900;
-font-size:16px;
-margin-bottom:7px;
+  font-weight:900;
+  font-size:16px;
+  margin-bottom:7px;
 }
 
 .rating{
-font-size:12px;
-margin-bottom:12px;
+  font-size:12px;
+  margin-bottom:12px;
 }
 
 .rating span{
-color:var(--muted);
+  color:var(--muted);
 }
 
 .price-area{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-margin-bottom:13px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:13px;
 }
 
 .price{
-font-size:20px;
-font-weight:900;
+  font-size:20px;
+  font-weight:900;
 }
 
 .old{
-color:#999fac;
-text-decoration:line-through;
-font-size:11px;
-margin-top:2px;
+  color:#999fac;
+  text-decoration:line-through;
+  font-size:11px;
+  margin-top:2px;
 }
 
 .discount{
-background:#e8f8ef;
-color:var(--green);
-padding:5px 7px;
-border-radius:7px;
-font-size:10px;
-font-weight:900;
-white-space:nowrap;
+  background:#e8f8ef;
+  color:var(--green);
+
+  padding:5px 7px;
+
+  border-radius:7px;
+
+  font-size:10px;
+  font-weight:900;
+
+  white-space:nowrap;
 }
 
+
+/* =========================
+   BUY BUTTON
+========================= */
+
 .buy-button{
-display:block;
-width:100%;
-border:none;
-background:var(--dark);
-color:white;
-padding:12px;
-border-radius:11px;
-font-weight:900;
-text-align:center;
-text-decoration:none;
-transition:.2s;
+  display:block;
+  width:100%;
+
+  border:none;
+
+  background:var(--dark);
+  color:white;
+
+  padding:12px;
+
+  border-radius:11px;
+
+  font-weight:900;
+
+  text-align:center;
+  text-decoration:none;
+
+  transition:.2s;
 }
 
 .buy-button:hover{
-opacity:.9;
-transform:translateY(-1px);
+  opacity:.9;
+  transform:translateY(-1px);
 }
 
 .commission{
-font-size:11px;
-color:var(--green);
-margin-top:9px;
-text-align:center;
-font-weight:700;
+  font-size:11px;
+  color:var(--green);
+
+  margin-top:9px;
+
+  text-align:center;
+
+  font-weight:700;
 }
 
+
+/* =========================
+   NO RESULTS
+========================= */
+
 .no-results{
-display:none;
-text-align:center;
-background:white;
-border:1px solid var(--border);
-border-radius:18px;
-padding:40px 20px;
+  display:none;
+
+  text-align:center;
+
+  background:white;
+  border:1px solid var(--border);
+
+  border-radius:18px;
+
+  padding:40px 20px;
 }
 
 .no-results-icon{
-font-size:40px;
-margin-bottom:10px;
+  font-size:40px;
+  margin-bottom:10px;
 }
 
 .no-results p{
-color:var(--muted);
-margin:7px 0 18px;
+  color:var(--muted);
+  margin:7px 0 18px;
 }
 
 .reset{
-border:none;
-background:var(--dark);
-color:white;
-padding:11px 17px;
-border-radius:10px;
-font-weight:800;
+  border:none;
+  background:var(--dark);
+  color:white;
+
+  padding:11px 17px;
+
+  border-radius:10px;
+
+  font-weight:800;
 }
 
+
+/* =========================
+   AFFILIATE INFO
+========================= */
+
 .info-box{
-margin-top:28px;
-background:white;
-border:1px solid var(--border);
-border-radius:18px;
-padding:20px;
+  margin-top:28px;
+
+  background:white;
+  border:1px solid var(--border);
+
+  border-radius:18px;
+
+  padding:20px;
 }
 
 .info-box h2{
-font-size:19px;
-margin-bottom:8px;
+  font-size:19px;
+  margin-bottom:8px;
 }
 
 .info-box p{
-color:var(--muted);
-font-size:13px;
-line-height:2;
+  color:var(--muted);
+  font-size:13px;
+  line-height:2;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
-border-top:1px solid var(--border);
-background:white;
-text-align:center;
-padding:30px 15px;
+  border-top:1px solid var(--border);
+
+  background:white;
+
+  text-align:center;
+
+  padding:30px 15px;
 }
 
 .footer-title{
-font-size:20px;
-font-weight:900;
+  font-size:20px;
+  font-weight:900;
 }
 
 footer p{
-color:var(--muted);
-font-size:13px;
-margin:5px 0 12px;
+  color:var(--muted);
+  font-size:13px;
+  margin:5px 0 12px;
 }
 
 footer small{
-color:#999fac;
-font-size:11px;
+  color:#999fac;
+  font-size:11px;
 }
+
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:900px){
 
-.products{
-grid-template-columns:repeat(2,1fr);
-}
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-.hero h1{
-font-size:36px;
-}
+  .hero h1{
+    font-size:36px;
+  }
 
 }
 
 @media(max-width:520px){
 
-header{
-padding:12px;
+  header{
+    padding:12px;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+
+  .header-button{
+    padding:9px 11px;
+    font-size:12px;
+  }
+
+  main{
+    padding:14px 10px 45px;
+  }
+
+  .hero{
+    padding:38px 14px;
+    border-radius:20px;
+  }
+
+  .hero h1{
+    font-size:29px;
+  }
+
+  .hero p{
+    font-size:13px;
+  }
+
+  .search button{
+    padding:0 14px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+  }
+
+  .product-image{
+    height:145px;
+  }
+
+  .info{
+    padding:10px;
+  }
+
+  .name{
+    font-size:13px;
+  }
+
+  .price{
+    font-size:17px;
+  }
+
+  .discount{
+    font-size:8px;
+    padding:4px;
+  }
+
+  .buy-button{
+    font-size:12px;
+    padding:10px 5px;
+  }
+
 }
 
-.logo{
-font-size:21px;
-}
-
-.header-button{
-padding:9px 11px;
-font-size:12px;
-}
-
-main{
-padding:14px 10px 45px;
-}
-
-.hero{
-padding:38px 14px;
-border-radius:20px;
-}
-
-.hero h1{
-font-size:29px;
-}
-
-.hero p{
-font-size:13px;
-}
-
-.search button{
-padding:0 14px;
-}
-
-.products{
-grid-template-columns:repeat(2,1fr);
-gap:9px;
-}
-
-.product-image{
-height:145px;
-}
-
-.info{
-padding:10px;
-}
-
-.name{
-font-size:13px;
-}
-
-.price{
-font-size:17px;
-}
-
-.discount{
-font-size:8px;
-padding:4px;
-}
-
-.buy-button{
-font-size:12px;
-padding:10px 5px;
-}
-
-}
-
-</style></head><body><header><div class="header"><a href="#" class="logo">
-🛍️ <span>آنلاین</span>‌شاپ
-</a><button
-class="header-button"
-onclick="showAbout()"
-
-«»
-
-ℹ️ درباره ما
-</button>
-
-</div></header><main><section class="hero"><div class="hero-content"><div class="badge">
-🔥 خرید هوشمند
-</div><h1>
-بهترین محصولات را پیدا کن
-</h1><p>
-محصولات را پیدا کن، قیمت‌ها را مقایسه کن
-و از فروشگاه اصلی خرید کن.
-</p><div class="search"><input
-id="searchInput"
-type="search"
-placeholder="نام محصول را جستجو کنید..."
-autocomplete="off"
-
-«»
-
-<button onclick="searchProducts()">
-🔎 جستجو
-</button></div></div></section><section class="section"><div class="section-header"><div><h2>
-🛍️ دسته‌بندی محصولات
-</h2><p class="section-subtitle">
-دسته موردنظر خود را انتخاب کنید
-</p></div><span id="resultCount">
-۴ محصول
-</span></div><div class="categories"><button
-class="category active"
-onclick="filterCategory('all',this)"
-
-«»
-
-🛍️ همه
-</button>
-
-<button
-class="category"
-onclick="filterCategory('electronics',this)"
-
-«»
-
-📱 موبایل و دیجیتال
-</button>
-
-<button
-class="category"
-onclick="filterCategory('computers',this)"
-
-«»
-
-💻 کامپیوتر
-</button>
-
-<button
-class="category"
-onclick="filterCategory('audio',this)"
-
-«»
-
-🎧 لوازم صوتی
-</button>
-
-<button
-class="category"
-onclick="filterCategory('fashion',this)"
-
-«»
-
-👟 پوشاک و کفش
-</button>
-
-</div></section><section class="section"><div class="section-header"><div><h2>
-🔥 محصولات ویژه
-</h2><p class="section-subtitle">
-محصولات منتخب فروشگاه‌های مختلف
-</p></div></div><section
-id="products"
-class="products"
-><!-- PRODUCT 1 --><article
-class="product"
-data-category="electronics"
-data-name="گوشی شیائومی"
-><div class="product-image"><img
-src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=90"
-alt="گوشی شیائومی"
-
-«»
-
-<span class="deal-badge">
-۲۰٪ تخفیف
-</span><button
-class="favorite"
-onclick="favorite(this)"
-
-«»
-
-♡
-</button>
-
-</div><div class="info"><div class="store">
-فروشگاه نمونه
-</div><div class="name">
-گوشی هوشمند شیائومی
-</div><div class="rating">
-⭐ 4.8
-<span>
-(۱۲۵ نظر)
-</span>
-</div><div class="price-area"><div><div class="price">
-۲۳,۹۰۰,۰۰۰ تومان
-</div><div class="old">
-۲۹,۹۰۰,۰۰۰ تومان
-</div></div><div class="discount">
-۲۰٪ تخفیف
-</div></div><a
-class="buy-button"
-href="https://example.com"
-target="_blank"
-rel="nofollow sponsored noopener"
-onclick="trackAffiliate('گوشی هوشمند شیائومی')"
-
-«»
-
-🛒 خرید از فروشگاه
-</a>
-
-<div class="commission">
-✓ خرید از این لینک شامل همکاری در فروش است
-</div></div></article><!-- PRODUCT 2 --><article
-class="product"
-data-category="computers"
-data-name="لپ تاپ"
-><div class="product-image"><img
-src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=90"
-alt="لپ تاپ"
-
-«»
-
-<span class="deal-badge">
-۱۲٪ تخفیف
-</span><button
-class="favorite"
-onclick="favorite(this)"
-
-«»
-
-♡
-</button>
-
-</div><div class="info"><div class="store">
-فروشگاه نمونه
-</div><div class="name">
-لپ‌تاپ پرو
-</div><div class="rating">
-⭐ 4.7
-<span>
-(۸۹ نظر)
-</span>
-</div><div class="price-area"><div><div class="price">
-۶۹,۹۰۰,۰۰۰ تومان
-</div><div class="old">
-۷۹,۹۰۰,۰۰۰ تومان
-</div></div><div class="discount">
-۱۲٪ تخفیف
-</div></div><a
-class="buy-button"
-href="https://example.com"
-target="_blank"
-rel="nofollow sponsored noopener"
-onclick="trackAffiliate('لپ‌تاپ پرو')"
-
-«»
-
-🛒 خرید از فروشگاه
-</a>
-
-<div class="commission">
-✓ خرید از این لینک شامل همکاری در فروش است
-</div></div></article><!-- PRODUCT 3 --><article
-class="product"
-data-category="audio"
-data-name="هدفون بی سیم"
-><div class="product-image"><img
-src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=90"
-alt="هدفون بی سیم"
-
-«»
-
-<span class="deal-badge">
-۳۴٪ تخفیف
-</span><button
-class="favorite"
-onclick="favorite(this)"
-
-«»
-
-♡
-</button>
-
-</div><div class="info"><div class="store">
-فروشگاه نمونه
-</div><div class="name">
-هدفون بی‌سیم
-</div><div class="rating">
-⭐ 4.9
-<span>
-(۲۱۰ نظر)
-</span>
-</div><div class="price-area"><div><div class="price">
-۵,۹۰۰,۰۰۰ تومان
-</div><div class="old">
-۸,۹۰۰,۰۰۰ تومان
-</div></div><div class="discount">
-۳۴٪ تخفیف
-</div></div><a
-class="buy-button"
-href="https://example.com"
-target="_blank"
-rel="nofollow sponsored noopener"
-onclick="trackAffiliate('هدفون بی‌سیم')"
-
-«»
-
-🛒 خرید از فروشگاه
-</a>
-
-<div class="commission">
-✓ خرید از این لینک شامل همکاری در فروش است
-</div></div></article><!-- PRODUCT 4 --><article
-class="product"
-data-category="fashion"
-data-name="کفش ورزشی"
-><div class="product-image"><img
-src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=90"
-alt="کفش ورزشی"
-
-«»
-
-<span class="deal-badge">
-۳۵٪ تخفیف
-</span><button
-class="favorite"
-onclick="favorite(this)"
-
-«»
-
-♡
-</button>
-
-</div><div class="info"><div class="store">
-فروشگاه نمونه
-</div><div class="name">
-کفش ورزشی
-</div><div class="rating">
-⭐ 4.6
-<span>
-(۷۴ نظر)
-</span>
-</div><div class="price-area"><div><div class="price">
-۴,۹۰۰,۰۰۰ تومان
-</div><div class="old">
-۷,۵۰۰,۰۰۰ تومان
-</div></div><div class="discount">
-۳۵٪ تخفیف
-</div></div><a
-class="buy-button"
-href="https://example.com"
-target="_blank"
-rel="nofollow sponsored noopener"
-onclick="trackAffiliate('کفش ورزشی')"
-
-«»
-
-🛒 خرید از فروشگاه
-</a>
-
-<div class="commission">
-✓ خرید از این لینک شامل همکاری در فروش است
-</div></div></article></section><div
-id="noResults"
-class="no-results"
-><div class="no-results-icon">
-🔎
-</div><h3>
-محصولی پیدا نشد
-</h3><p>
-نام محصول یا دسته دیگری را امتحان کنید.
-</p><button
-class="reset"
-onclick="resetSearch()"
-
-«»
-
-نمایش همه محصولات
-</button>
-
-</div></section><section class="info-box"><h2>
-💰 همکاری در فروش
-</h2><p>
-آنلاین‌شاپ محصولات فروشگاه‌های مختلف را معرفی می‌کند.
-با کلیک روی «خرید از فروشگاه»، مشتری به فروشگاه اصلی
-منتقل می‌شود. در صورت ثبت خرید از لینک همکاری در فروش،
-ممکن است کمیسیونی به آنلاین‌شاپ تعلق بگیرد.
-</p></section></main><footer><div class="footer-title">
-🛍️ آنلاین‌شاپ
-</div><p>
-پیدا کن، مقایسه کن، بهتر خرید کن.
-</p><small>
-© ۲۰۲۶ آنلاین‌شاپ — تمامی حقوق محفوظ است.
-</small></footer><script>
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+  <div class="header">
+
+    <a href="#" class="logo">
+      🛍️ <span>آنلاین</span>‌شاپ
+    </a>
+
+    <button
+      class="header-button"
+      onclick="showAffiliateInfo()"
+    >
+      💰 همکاری در فروش
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      🔥 خرید هوشمند
+    </div>
+
+    <h1>
+      بهترین محصولات را پیدا کن
+    </h1>
+
+    <p>
+      محصولات را پیدا کن، قیمت‌ها را مقایسه کن
+      و برای خرید به فروشگاه اصلی برو.
+    </p>
+
+    <div class="search">
+
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="نام محصول را جستجو کنید..."
+        autocomplete="off"
+      >
+
+      <button onclick="searchProducts()">
+        🔎 جستجو
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div>
+
+      <h2>
+        🛍️ دسته‌بندی محصولات
+      </h2>
+
+      <p class="section-subtitle">
+        دسته موردنظر خود را انتخاب کنید
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="categories">
+
+    <button
+      class="category active"
+      onclick="filterCategory('all',this)"
+    >
+      🛍️ همه
+    </button>
+
+    <button
+      class="category"
+      onclick="filterCategory('electronics',this)"
+    >
+      📱 موبایل و دیجیتال
+    </button>
+
+    <button
+      class="category"
+      onclick="filterCategory('computers',this)"
+    >
+      💻 کامپیوتر
+    </button>
+
+    <button
+      class="category"
+      onclick="filterCategory('audio',this)"
+    >
+      🎧 لوازم صوتی
+    </button>
+
+    <button
+      class="category"
+      onclick="filterCategory('fashion',this)"
+    >
+      👟 پوشاک و کفش
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div>
+
+      <h2>
+        🔥 محصولات ویژه
+      </h2>
+
+      <p class="section-subtitle">
+        محصولات منتخب فروشگاه‌های مختلف
+      </p>
+
+    </div>
+
+    <span id="resultCount">
+      4 محصول
+    </span>
+
+  </div>
+
+
+  <section
+    class="products"
+    id="products"
+  >
+
+
+    <!-- PRODUCT 1 -->
+
+    <article
+      class="product"
+      data-category="electronics"
+      data-name="گوشی شیائومی"
+    >
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85"
+          alt="گوشی هوشمند شیائومی"
+        >
+
+        <span class="deal-badge">
+          ۲۰٪ تخفیف
+        </span>
+
+        <button
+          class="favorite"
+          onclick="favorite(this)"
+        >
+          ♡
+        </button>
+
+      </div>
+
+
+      <div class="info">
+
+        <div class="store">
+          فروشگاه نمونه
+        </div>
+
+        <div class="name">
+          گوشی هوشمند شیائومی
+        </div>
+
+        <div class="rating">
+          ⭐ 4.8
+          <span>
+            (۱۲۵ نظر)
+          </span>
+        </div>
+
+
+        <div class="price-area">
+
+          <div>
+
+            <div class="price">
+              ۲۳,۹۰۰,۰۰۰ تومان
+            </div>
+
+            <div class="old">
+              ۲۹,۹۰۰,۰۰۰ تومان
+            </div>
+
+          </div>
+
+          <div class="discount">
+            ۲۰٪ تخفیف
+          </div>
+
+        </div>
+
+
+        <button
+          class="buy-button"
+          onclick="goAffiliate(
+            'گوشی هوشمند شیائومی',
+            'https://example.com/'
+          )"
+        >
+          🛒 خرید از فروشگاه
+        </button>
+
+        <div class="commission">
+          ✓ خرید از این لینک ممکن است برای آنلاین‌شاپ کمیسیون ایجاد کند.
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- PRODUCT 2 -->
+
+    <article
+      class="product"
+      data-category="computers"
+      data-name="لپ تاپ پرو"
+    >
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=85"
+          alt="لپ تاپ پرو"
+        >
+
+        <span class="deal-badge">
+          ۱۲٪ تخفیف
+        </span>
+
+        <button
+          class="favorite"
+          onclick="favorite(this)"
+        >
+          ♡
+        </button>
+
+      </div>
+
+
+      <div class="info">
+
+        <div class="store">
+          فروشگاه نمونه
+        </div>
+
+        <div class="name">
+          لپ‌تاپ پرو
+        </div>
+
+        <div class="rating">
+          ⭐ 4.7
+          <span>
+            (۸۹ نظر)
+          </span>
+        </div>
+
+
+        <div class="price-area">
+
+          <div>
+
+            <div class="price">
+              ۶۹,۹۰۰,۰۰۰ تومان
+            </div>
+
+            <div class="old">
+              ۷۹,۹۰۰,۰۰۰ تومان
+            </div>
+
+          </div>
+
+          <div class="discount">
+            ۱۲٪ تخفیف
+          </div>
+
+        </div>
+
+
+        <button
+          class="buy-button"
+          onclick="goAffiliate(
+            'لپ‌تاپ پرو',
+            'https://example.com/'
+          )"
+        >
+          🛒 خرید از فروشگاه
+        </button>
+
+        <div class="commission">
+          ✓ خرید از این لینک ممکن است برای آنلاین‌شاپ کمیسیون ایجاد کند.
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- PRODUCT 3 -->
+
+    <article
+      class="product"
+      data-category="audio"
+      data-name="هدفون بی سیم"
+    >
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85"
+          alt="هدفون بی سیم"
+        >
+
+        <span class="deal-badge">
+          ۳۴٪ تخفیف
+        </span>
+
+        <button
+          class="favorite"
+          onclick="favorite(this)"
+        >
+          ♡
+        </button>
+
+      </div>
+
+
+      <div class="info">
+
+        <div class="store">
+          فروشگاه نمونه
+        </div>
+
+        <div class="name">
+          هدفون بی‌سیم
+        </div>
+
+        <div class="rating">
+          ⭐ 4.9
+          <span>
+            (۲۱۰ نظر)
+          </span>
+        </div>
+
+
+        <div class="price-area">
+
+          <div>
+
+            <div class="price">
+              ۵,۹۰۰,۰۰۰ تومان
+            </div>
+
+            <div class="old">
+              ۸,۹۰۰,۰۰۰ تومان
+            </div>
+
+          </div>
+
+          <div class="discount">
+            ۳۴٪ تخفیف
+          </div>
+
+        </div>
+
+
+        <button
+          class="buy-button"
+          onclick="goAffiliate(
+            'هدفون بی‌سیم',
+            'https://example.com/'
+          )"
+        >
+          🛒 خرید از فروشگاه
+        </button>
+
+        <div class="commission">
+          ✓ خرید از این لینک ممکن است برای آنلاین‌شاپ کمیسیون ایجاد کند.
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- PRODUCT 4 -->
+
+    <article
+      class="product"
+      data-category="fashion"
+      data-name="کفش ورزشی"
+    >
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85"
+          alt="کفش ورزشی"
+        >
+
+        <span class="deal-badge">
+          ۳۵٪ تخفیف
+        </span>
+
+        <button
+          class="favorite"
+          onclick="favorite(this)"
+        >
+          ♡
+        </button>
+
+      </div>
+
+
+      <div class="info">
+
+        <div class="store">
+          فروشگاه نمونه
+        </div>
+
+        <div class="name">
+          کفش ورزشی
+        </div>
+
+        <div class="rating">
+          ⭐ 4.6
+          <span>
+            (۷۴ نظر)
+          </span>
+        </div>
+
+
+        <div class="price-area">
+
+          <div>
+
+            <div class="price">
+              ۴,۹۰۰,۰۰۰ تومان
+            </div>
+
+            <div class="old">
+              ۷,۵۰۰,۰۰۰ تومان
+            </div>
+
+          </div>
+
+          <div class="discount">
+            ۳۵٪ تخفیف
+          </div>
+
+        </div>
+
+
+        <button
+          class="buy-button"
+          onclick="goAffiliate(
+            'کفش ورزشی',
+            'https://example.com/'
+          )"
+        >
+          🛒 خرید از فروشگاه
+        </button>
+
+        <div class="commission">
+          ✓ خرید از این لینک ممکن است برای آنلاین‌شاپ کمیسیون ایجاد کند.
+        </div>
+
+      </div>
+
+    </article>
+
+
+  </section>
+
+
+  <!-- NO RESULTS -->
+
+  <div
+    id="noResults"
+    class="no-results"
+  >
+
+    <div class="no-results-icon">
+      🔎
+    </div>
+
+    <h3>
+      محصولی پیدا نشد
+    </h3>
+
+    <p>
+      نام محصول یا دسته دیگری را امتحان کنید.
+    </p>
+
+    <button
+      class="reset"
+      onclick="resetSearch()"
+    >
+      نمایش همه محصولات
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- AFFILIATE INFO -->
+
+<section class="info-box">
+
+  <h2>
+    💰 همکاری در فروش
+  </h2>
+
+  <p>
+    آنلاین‌شاپ محصولات فروشگاه‌های مختلف را معرفی می‌کند.
+    با انتخاب گزینه «خرید از فروشگاه»، شما به فروشگاه اصلی
+    منتقل می‌شوید. اگر لینک استفاده‌شده یک لینک همکاری در
+    فروش معتبر باشد و خرید طبق شرایط برنامه همکاری انجام شود،
+    ممکن است کمیسیونی به آنلاین‌شاپ تعلق بگیرد.
+  </p>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="footer-title">
+    🛍️ آنلاین‌شاپ
+  </div>
+
+  <p>
+    پیدا کن، مقایسه کن، بهتر خرید کن.
+  </p>
+
+  <small>
+    © ۲۰۲۶ آنلاین‌شاپ — تمامی حقوق محفوظ است.
+  </small>
+
+</footer>
+
+
+<script>
 
 /* =========================
-SEARCH
+   SEARCH
 ========================= */
 
 function searchProducts(){
 
-const input =
-document
-.getElementById("searchInput")
-.value
-.toLowerCase()
-.trim();
+  const input =
+    document
+      .getElementById("searchInput")
+      .value
+      .toLowerCase()
+      .trim();
 
-const products =
-document.querySelectorAll(".product");
+  const products =
+    document.querySelectorAll(".product");
 
-let count = 0;
+  let count = 0;
 
-products.forEach(product => {
+  products.forEach(product => {
 
-const name =
-product.dataset.name
-.toLowerCase();
+    const name =
+      product
+        .dataset
+        .name
+        .toLowerCase();
 
-const category =
-product.dataset.category
-.toLowerCase();
+    const category =
+      product
+        .dataset
+        .category
+        .toLowerCase();
 
-const show =
-name.includes(input) ||
-category.includes(input);
+    const show =
+      name.includes(input) ||
+      category.includes(input);
 
-product.style.display =
-show ? "" : "none";
+    product.style.display =
+      show ? "" : "none";
 
-if(show){
-count++;
-}
+    if(show){
+      count++;
+    }
 
-});
+  });
 
-updateResults(count);
-
+  updateResults(count);
 }
 
 
 /* =========================
-CATEGORY
+   CATEGORY
 ========================= */
 
 function filterCategory(category,button){
 
-const products =
-document.querySelectorAll(".product");
+  const products =
+    document.querySelectorAll(".product");
 
-document
-.querySelectorAll(".category")
-.forEach(item => {
-item.classList.remove("active");
-});
+  document
+    .querySelectorAll(".category")
+    .forEach(item => {
+      item.classList.remove("active");
+    });
 
-button.classList.add("active");
+  button.classList.add("active");
 
-let count = 0;
+  let count = 0;
 
-products.forEach(product => {
+  products.forEach(product => {
 
-const show =
-category === "all" ||
-product.dataset.category === category;
+    const show =
+      category === "all" ||
+      product.dataset.category === category;
 
-product.style.display =
-show ? "" : "none";
+    product.style.display =
+      show ? "" : "none";
 
-if(show){
-count++;
-}
+    if(show){
+      count++;
+    }
 
-});
+  });
 
-document
-.getElementById("searchInput")
-.value = "";
+  document
+    .getElementById("searchInput")
+    .value = "";
 
-updateResults(count);
-
+  updateResults(count);
 }
 
 
 /* =========================
-RESULTS
+   RESULTS
 ========================= */
 
 function updateResults(count){
 
-document
-.getElementById("resultCount")
-.textContent =
-toPersianNumber(count) + " محصول";
+  document
+    .getElementById("resultCount")
+    .textContent =
+      count + " محصول";
 
-document
-.getElementById("noResults")
-.style.display =
-count === 0 ? "block" : "none";
-
+  document
+    .getElementById("noResults")
+    .style.display =
+      count === 0
+      ? "block"
+      : "none";
 }
 
 
 /* =========================
-RESET
+   RESET SEARCH
 ========================= */
 
 function resetSearch(){
 
-const products =
-document.querySelectorAll(".product");
+  document
+    .getElementById("searchInput")
+    .value = "";
 
-products.forEach(product => {
-product.style.display = "";
-});
+  const products =
+    document.querySelectorAll(".product");
 
-document
-.getElementById("searchInput")
-.value = "";
+  products.forEach(product => {
+    product.style.display = "";
+  });
 
-document
-.querySelectorAll(".category")
-.forEach(item => {
-item.classList.remove("active");
-});
+  document
+    .querySelectorAll(".category")
+    .forEach(item => {
+      item.classList.remove("active");
+    });
 
-document
-.querySelector(".category")
-.classList.add("active");
+  document
+    .querySelector(".category")
+    .classList.add("active");
 
-updateResults(products.length);
-
+  updateResults(products.length);
 }
 
 
 /* =========================
-FAVORITE
+   FAVORITE
 ========================= */
 
 function favorite(button){
 
-button.classList.toggle("saved");
+  button.classList.toggle("saved");
 
-button.textContent =
-button.classList.contains("saved")
-? "♥"
-: "♡";
-
+  button.textContent =
+    button.classList.contains("saved")
+    ? "♥"
+    : "♡";
 }
 
 
 /* =========================
-AFFILIATE TRACKING
+   AFFILIATE CLICK
 ========================= */
 
-function trackAffiliate(productName){
+function goAffiliate(productName,affiliateUrl){
 
-localStorage.setItem(
-"lastAffiliateClick",
-JSON.stringify({
-product:productName,
-time:new Date().toISOString()
-})
-);
+  if(
+    !affiliateUrl ||
+    affiliateUrl === "https://example.com/"
+  ){
 
+    alert(
+      "⚠️ لینک همکاری در فروش این محصول هنوز تنظیم نشده است.\n\n" +
+      "ابتدا لینک افیلیت واقعی فروشگاه را جایگزین کنید."
+    );
+
+    return;
+  }
+
+
+  /* ثبت کلیک محلی */
+
+  let clicks =
+    JSON.parse(
+      localStorage.getItem("affiliateClicks") || "[]"
+    );
+
+  clicks.push({
+
+    product:productName,
+
+    time:new Date().toISOString()
+
+  });
+
+  localStorage.setItem(
+    "affiliateClicks",
+    JSON.stringify(clicks)
+  );
+
+
+  /* انتقال به فروشگاه */
+
+  window.location.href = affiliateUrl;
 }
 
 
 /* =========================
-ABOUT
+   AFFILIATE INFO
 ========================= */
 
-function showAbout(){
+function showAffiliateInfo(){
 
-alert(
-"🛍️ آنلاین‌شاپ\n\n" +
-"محصولات فروشگاه‌های مختلف را پیدا و مقایسه کنید.\n\n" +
-"برای خرید، روی «خرید از فروشگاه» بزنید."
-);
+  alert(
+    "💰 سیستم همکاری در فروش\n\n" +
 
-}
+    "مشتری با لینک همکاری در فروش به فروشگاه اصلی می‌رود.\n\n" +
 
+    "اگر خرید طبق شرایط برنامه افیلیت انجام شود، " +
+    "کمیسیون برای صاحب لینک ثبت می‌شود.\n\n" +
 
-/* =========================
-PERSIAN NUMBERS
-========================= */
-
-function toPersianNumber(number){
-
-return String(number)
-.replace(/\d/g,d =>
-"۰۱۲۳۴۵۶۷۸۹"[d]
-);
+    "توجه: ثبت کلیک در این صفحه به‌تنهایی به معنی " +
+    "ثبت کمیسیون واقعی نیست."
+  );
 
 }
 
 
 /* =========================
-ENTER SEARCH
+   ENTER SEARCH
 ========================= */
 
 document
-.getElementById("searchInput")
-.addEventListener(
-"keydown",
-function(event){
+  .getElementById("searchInput")
+  .addEventListener(
+    "keydown",
+    function(event){
 
-if(event.key === "Enter"){
-searchProducts();
-}
+      if(event.key === "Enter"){
+        searchProducts();
+      }
 
-}
+    }
+  );
+
+
+/* =========================
+   INITIAL
+========================= */
+
+updateResults(
+  document.querySelectorAll(".product").length
 );
 
-</script></body>
-              </html>
+</script>
+
+
+</body>
+
+</html>
