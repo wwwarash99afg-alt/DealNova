@@ -610,25 +610,7 @@
   <div
     id="cartItems"
     class="cart-items"
-  >
-
-    <div class="empty-cart">
-
-      <div>
-        🛒
-      </div>
-
-      <h3>
-        سبد خرید خالی است
-      </h3>
-
-      <p>
-        محصولات موردنظرت را به سبد اضافه کن.
-      </p>
-
-    </div>
-
-  </div>
+  ></div>
 
 
   <div class="cart-footer">
@@ -659,10 +641,32 @@
 
 <script>
 
-let cart = [];
+/* =========================
+   CART STORAGE
+========================= */
+
+let cart = JSON.parse(
+  localStorage.getItem("onlineShopCart") || "[]"
+);
 
 
-/* SEARCH */
+/* =========================
+   SAVE CART
+========================= */
+
+function saveCart() {
+
+  localStorage.setItem(
+    "onlineShopCart",
+    JSON.stringify(cart)
+  );
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
 
 function searchProducts() {
 
@@ -705,7 +709,9 @@ function searchProducts() {
 }
 
 
-/* CATEGORY */
+/* =========================
+   CATEGORY
+========================= */
 
 function filterCategory(category, button) {
 
@@ -748,7 +754,9 @@ function filterCategory(category, button) {
 }
 
 
-/* RESULTS */
+/* =========================
+   RESULTS
+========================= */
 
 function updateResults(count) {
 
@@ -766,7 +774,9 @@ function updateResults(count) {
 }
 
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
 function resetSearch() {
 
@@ -795,7 +805,9 @@ function resetSearch() {
 }
 
 
-/* FAVORITE */
+/* =========================
+   FAVORITE
+========================= */
 
 function favorite(button) {
 
@@ -808,12 +820,16 @@ function favorite(button) {
 }
 
 
-/* ADD CART */
+/* =========================
+   ADD TO CART
+========================= */
 
 function addToCart(name, price, image) {
 
   const existing =
-    cart.find(item => item.name === name);
+    cart.find(item =>
+      item.name === name
+    );
 
   if (existing) {
 
@@ -822,13 +838,20 @@ function addToCart(name, price, image) {
   } else {
 
     cart.push({
+
       name: name,
+
       price: price,
+
       image: image,
+
       quantity: 1
+
     });
 
   }
+
+  saveCart();
 
   updateCart();
 
@@ -836,9 +859,13 @@ function addToCart(name, price, image) {
 }
 
 
-/* UPDATE CART */
+/* =========================
+   UPDATE CART
+========================= */
 
 function updateCart() {
+
+  saveCart();
 
   const cartCount =
     cart.reduce(
@@ -854,22 +881,37 @@ function updateCart() {
 
 
   const cartItems =
-    document.getElementById("cartItems");
+    document.getElementById(
+      "cartItems"
+    );
 
   const cartTotal =
-    document.getElementById("cartTotal");
+    document.getElementById(
+      "cartTotal"
+    );
 
 
   if (cart.length === 0) {
 
     cartItems.innerHTML = `
+
       <div class="empty-cart">
-        <div>🛒</div>
-        <h3>سبد خرید خالی است</h3>
+
+        <div>
+          🛒
+        </div>
+
+        <h3>
+          سبد خرید خالی است
+        </h3>
+
         <p>
-          محصولات موردنظرت را به سبد اضافه کن.
+          محصولات موردنظرت را
+          به سبد اضافه کن.
         </p>
+
       </div>
+
     `;
 
     cartTotal.textContent = "€0";
@@ -941,10 +983,12 @@ function updateCart() {
         </div>
 
       </div>
+
     `;
 
-
-    cartItems.appendChild(itemElement);
+    cartItems.appendChild(
+      itemElement
+    );
 
   });
 
@@ -954,9 +998,15 @@ function updateCart() {
 }
 
 
-/* QUANTITY */
+/* =========================
+   CHANGE QUANTITY
+========================= */
 
 function changeQuantity(index, change) {
+
+  if (!cart[index]) {
+    return;
+  }
 
   cart[index].quantity += change;
 
@@ -966,23 +1016,37 @@ function changeQuantity(index, change) {
 
   }
 
+  saveCart();
+
   updateCart();
 }
 
 
-/* REMOVE */
+/* =========================
+   REMOVE
+========================= */
 
 function removeFromCart(index) {
 
+  if (!cart[index]) {
+    return;
+  }
+
   cart.splice(index, 1);
+
+  saveCart();
 
   updateCart();
 }
 
 
-/* OPEN CART */
+/* =========================
+   OPEN CART
+========================= */
 
 function openCart() {
+
+  updateCart();
 
   document
     .getElementById("cartPanel")
@@ -997,7 +1061,9 @@ function openCart() {
 }
 
 
-/* CLOSE CART */
+/* =========================
+   CLOSE CART
+========================= */
 
 function closeCart() {
 
@@ -1014,7 +1080,9 @@ function closeCart() {
 }
 
 
-/* CHECKOUT */
+/* =========================
+   CHECKOUT
+========================= */
 
 function checkout() {
 
@@ -1034,7 +1102,9 @@ function checkout() {
 }
 
 
-/* ACCOUNT */
+/* =========================
+   ACCOUNT
+========================= */
 
 function account() {
 
@@ -1045,7 +1115,9 @@ function account() {
 }
 
 
-/* ENTER SEARCH */
+/* =========================
+   ENTER SEARCH
+========================= */
 
 document
   .getElementById("searchInput")
@@ -1062,7 +1134,15 @@ document
     }
   );
 
+
+/* =========================
+   LOAD CART
+========================= */
+
+updateCart();
+
 </script>
 
 </body>
-  </html>
+
+            </html>
